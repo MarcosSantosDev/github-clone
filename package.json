@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "ts-github",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,15 @@
     "lint": "eslint ./src",
     "test": "jest",
     "coverage": "jest --coverage"
+  },
+  "author": "Marcos Santos <marcosadriano034@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcosSantosDev/ts-github/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosSantosDev/ts-github.git"
   },
   "dependencies": {
     "react": "^18.2.0",
