@@ -1,6 +1,4 @@
-# React Playground
-
-_Playground project to launch applications with Reactjs_
+# TS GITHUB
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-orange.svg)](https://github.com/prettier/prettier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
