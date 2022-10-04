@@ -1,19 +1,36 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import GlobalNavBar from './common/components/context/GlobalNavBar/GlobalNavBar';
-import { NotFoundPeople } from './pages';
+import { NoMatch, NotFoundPeople, ProfileOverview } from './pages';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <NoMatch title="No Match!" />,
+  },
+  {
+    path: '/github',
+    element: <NoMatch title="Go to my profile!" />,
+  },
+  {
+    path: '/github/:profileName',
+    element: <ProfileOverview />,
+  },
+  {
+    path: '/not-found',
+    element: <NotFoundPeople />,
+  },
+  {
+    path: '*',
+    element: <NotFoundPeople />,
+  },
+]);
 
 function Layout() {
   return (
-    <BrowserRouter>
+    <main>
       <GlobalNavBar />
-      <main>
-        <Routes>
-          <Route path="/" element={<NotFoundPeople />}>
-            <Route index element={<NotFoundPeople />} />
-          </Route>
-        </Routes>
-      </main>
-    </BrowserRouter>
+      <RouterProvider router={router} />
+    </main>
   );
 }
 
