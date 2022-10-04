@@ -1,18 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './pages';
-
-function GlobalNav() {
-  return <div />;
-}
+import GlobalNavBar from './common/components/context/GlobalNavBar/GlobalNavBar';
+import { NotFoundPeople } from './pages';
 
 function Layout() {
   return (
     <BrowserRouter>
-      <GlobalNav />
+      <GlobalNavBar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<NotFoundPeople />}>
+            <Route index element={<NotFoundPeople />} />
           </Route>
         </Routes>
       </main>
