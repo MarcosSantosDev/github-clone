@@ -1,6 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+${({ theme }) => css`
+  body {
+    margin: 0;
+    font-family: ${theme.typograph.font.family.main}, sans-serif;
+    font-size: ${theme.typograph.font.size.small};
+    line-height: 1.5;
+    color: ${theme.colors.secondary};
+    background-color: ${theme.colors.main};
+  }
+`}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -18,14 +29,6 @@ html {
 
 /* Sections
    ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
-}
 
 /**
  * Render the 'main' element consistently in IE.
