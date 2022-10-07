@@ -1,5 +1,12 @@
+import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { ButtonProps, Sizes } from './Button';
+
+type Sizes = 'small' | 'medium' | 'large';
+
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  fullWidth?: boolean;
+  size?: Sizes;
+};
 
 function getButtonSizes(size?: Sizes) {
   switch (size) {

@@ -1,5 +1,7 @@
+import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { InputProps } from './Input';
+
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = styled.input<InputProps>`
   ${({ theme }) => css`

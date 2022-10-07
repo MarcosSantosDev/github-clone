@@ -1,14 +1,12 @@
-import Input from '../../common/components/form/Input/Input';
-import { Button } from '../../common/components/structure/Button/Button.styles';
+import { Input } from '../../common/components/form';
+import { Button } from '../../common/components/structure';
 import * as S from './NotFoundPeople.styles';
 
 function Home() {
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const notFoundPeopleValue = formData.get('not-found-people') as
-      | string
-      | null;
+    const notFoundPeopleValue = formData.get('profile') as string | null;
 
     // eslint-disable-next-line no-console
     console.log(notFoundPeopleValue);
@@ -22,10 +20,10 @@ function Home() {
       <S.NotFoundPeopleContainerDiv>
         <S.NotFoundPeopleForm onSubmit={handleOnSubmit}>
           <S.FormContentDiv>
-            <S.NotFoundPeopleLabel htmlFor="not-found-people">
+            <S.NotFoundPeopleLabel htmlFor="profile">
               Find people on GitHub:
             </S.NotFoundPeopleLabel>
-            <Input type="text" id="not-found-people" />
+            <Input type="text" id="profile" />
             <Button type="submit" fullWidth>
               Search
             </Button>
