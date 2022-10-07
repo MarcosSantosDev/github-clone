@@ -48,13 +48,13 @@ const theme: AppTheme = {
     main: '#22272e',
     secondary: '#adbac7',
     neutral: {
-      white: '#fff',
-      black: '#000',
+      white: '#f0f8ff',
+      black: '#161b22',
       gray: {
         50: '#adbac7',
-        100: '',
+        100: '#c9d1d9',
         150: '',
-        200: '',
+        200: '#85898b',
         250: '',
         300: '#768390',
         350: '',
