@@ -1,8 +1,10 @@
+import * as S from './ProfileOverview.styles';
+
 const DefaultProfile = () => {
   return (
-    <div>
-      <h2>Profile: MarcosSantosDev</h2>
-    </div>
+    <S.ContainerDiv>
+      <h2>MarcosSantosDev</h2>
+    </S.ContainerDiv>
   );
 };
 

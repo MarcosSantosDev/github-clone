@@ -4,6 +4,9 @@ export const ContainerDiv = styled.div``;
 
 export const SpaceToImageDiv = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: calc(100vh - 400px);
     background: ${theme.colors.neutral.white};
   `}
