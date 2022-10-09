@@ -28,7 +28,7 @@ Before starting, make sure you've met the following requirements:
 - node(versions 14.x.x or later)
 - npm(versions 5.x.x or later)
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
 To start the project, follow these steps:
 
@@ -44,7 +44,7 @@ Install the dependencies
 npm install
 ```
 
-# ☕ Useful commands
+## ☕ Useful commands
 
 To start the application, run:
 
