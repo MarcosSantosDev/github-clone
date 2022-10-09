@@ -1,9 +1,22 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import {
+  render,
+  screen,
+  fireEvent,
+  RenderOptions,
+} from '@testing-library/react';
+import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
 import { Input } from './Input';
+
+const renderWithTheme = (
+  ui: React.ReactNode,
+  options?: Omit<RenderOptions, 'queries'>,
+) => {
+  return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
+};
 
 describe('<Input />', () => {
   it('should contains in the document', () => {
-    render(<Input type="text" data-testid="input-text" />);
+    renderWithTheme(<Input type="text" data-testid="input-text" />);
 
     const element = screen.getByTestId('input-text');
 
@@ -11,7 +24,7 @@ describe('<Input />', () => {
   });
 
   it('should contain the specified value', () => {
-    render(<Input type="text" data-testid="input-text" />);
+    renderWithTheme(<Input type="text" data-testid="input-text" />);
 
     const inputElement = screen.getByTestId<HTMLInputElement>('input-text');
 
