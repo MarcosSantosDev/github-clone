@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import { ThemeProvider } from 'styled-components';
-import theme from './theme';
+
 import { GlobalStyles } from './global-styles';
+import theme from './theme';
 
 export const AppThemeProvider = ({
   children,

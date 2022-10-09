@@ -1,5 +1,6 @@
-import { Input } from '../../common/components/form';
-import { Button } from '../../common/components/structure';
+import { Input } from '@/common/components/form';
+import { Button } from '@/common/components/structure';
+
 import * as S from './NotFoundPeople.styles';
 
 function Home() {

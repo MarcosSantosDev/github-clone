@@ -1,12 +1,15 @@
 import * as React from 'react';
+
 import {
   render,
   screen,
   fireEvent,
   RenderOptions,
 } from '@testing-library/react';
+
+import { AppThemeProvider } from '@/styles/AppThemeProvider';
+
 import { Button } from './Button';
-import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
 
 const renderWithTheme = (
   ui: React.ReactNode,

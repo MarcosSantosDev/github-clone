@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import { iconLoader } from '../../../utils/iconLoader';
+
+import { loader } from '@/common/icons';
+
 import * as S from './GlobalNavbar.styles';
 
 const GlobalNavbar = () => (
   <S.Header>
     <S.Nav>
-      <S.IconContainerDiv>{iconLoader('github', 32)}</S.IconContainerDiv>
+      <S.IconContainerDiv>{loader('github', 32)}</S.IconContainerDiv>
 
       <S.InputWrapper>
         <S.InputSearch type="text" placeholder="Search or jump to…" />

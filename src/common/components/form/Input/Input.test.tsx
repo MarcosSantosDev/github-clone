@@ -4,7 +4,9 @@ import {
   fireEvent,
   RenderOptions,
 } from '@testing-library/react';
-import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
+
+import { AppThemeProvider } from '@/styles/AppThemeProvider';
+
 import { Input } from './Input';
 
 const renderWithTheme = (
