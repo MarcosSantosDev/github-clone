@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+
+import { Button } from '@/common/components/structure';
+
 import * as S from './NoMatch.styles';
-import { Button } from '../../common/components/structure';
 
 type NoMatchProps = {
   title: string;

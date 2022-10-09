@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GlobalNavbar from './common/components/context/GlobalNavbar/GlobalNavbar';
-import GlobalFooter from './common/components/context/GlobalFooter/GlobalFooter';
+
+import GlobalFooter from '@/common/components/context/GlobalFooter/GlobalFooter';
+import GlobalNavbar from '@/common/components/context/GlobalNavbar/GlobalNavbar';
+
 import { NoMatch, NotFoundPeople, ProfileOverview } from './pages';
 
 export const MainRoutes = () => {

@@ -1,6 +1,8 @@
-import { IconType } from 'react-icons/lib';
 import { AiOutlineStar, AiOutlineLink, AiOutlineProject } from 'react-icons/ai';
+import { BsMoon, BsSun } from 'react-icons/bs';
 import { FaRegBuilding } from 'react-icons/fa';
+import { FiBox } from 'react-icons/fi';
+import { GiBookmark, GiBookmarklet } from 'react-icons/gi';
 import {
   GoRepo,
   GoRepoForked,
@@ -10,9 +12,7 @@ import {
   GoOrganization,
   GoCalendar,
 } from 'react-icons/go';
-import { BsMoon, BsSun } from 'react-icons/bs';
-import { FiBox } from 'react-icons/fi';
-import { GiBookmark, GiBookmarklet } from 'react-icons/gi';
+import { IconType } from 'react-icons/lib';
 
 type Icon = {
   name: string;
@@ -38,7 +38,7 @@ const icons: Icon[] = [
   { name: 'box', Icon: FiBox },
 ];
 
-export const iconLoader = (
+export const loader = (
   iconName: string,
   fontSize?: string | number,
 ): JSX.Element => {

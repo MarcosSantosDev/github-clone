@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
+
+import { AppThemeProvider } from '@/styles/AppThemeProvider';
+
 import { Input } from './Input';
 import type { InputProps } from './Input';
 

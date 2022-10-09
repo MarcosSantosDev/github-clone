@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AppThemeProvider } from '../../../../styles/AppThemeProvider';
+
+import { AppThemeProvider } from '@/styles/AppThemeProvider';
+
 import { Button, buttonSizes } from './Button';
 import type { ButtonProps } from './Button';
 

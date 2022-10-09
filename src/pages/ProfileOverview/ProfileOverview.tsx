@@ -2,7 +2,8 @@ import {
   TabNavigation,
   Profile,
   Repositories,
-} from '../../common/components/context/ProfileOverview';
+} from '@/common/components/context/ProfileOverview';
+
 import * as S from './ProfileOverview.styles';
 
 const DefaultProfile = () => {

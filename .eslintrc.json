@@ -16,7 +16,8 @@
     "react",
     "jest",
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "eslint-plugin-import-helpers"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -35,6 +36,23 @@
     "prettier/prettier": "error",
     "no-console": "error",
     "no-underscore-dangle": 0,
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react$/",
+          "/^@[a-zA-Z]/",
+          "module",
+          "/^@/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
   }
 }
