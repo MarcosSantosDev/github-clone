@@ -3,30 +3,19 @@ import styled, { css } from 'styled-components';
 
 type Sizes = 'small' | 'medium' | 'large';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   fullWidth?: boolean;
   size?: Sizes;
 };
 
-function getButtonSizes(size?: Sizes) {
-  switch (size) {
-    case 'small':
-      return css`
-        padding: 4px 6px;
-      `;
-    case 'medium':
-      return css`
-        padding: 8px 12px;
-      `;
-    case 'large':
-      return css`
-        padding: 16px 32px;
-      `;
-  }
-}
+export const buttonSizes: Record<Sizes, string> = {
+  small: 'padding: 4px 6px;',
+  medium: 'padding: 8px 12px;',
+  large: 'padding: 16px 32px;',
+};
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, fullWidth, size }) => css`
+  ${({ theme, fullWidth, size = 'small' }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +28,8 @@ export const Button = styled.button<ButtonProps>`
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
-    ${getButtonSizes(size)}
+
+    ${buttonSizes[size]}
 
     svg {
       margin: 0 4px;
