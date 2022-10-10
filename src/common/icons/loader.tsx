@@ -14,8 +14,26 @@ import {
 } from 'react-icons/go';
 import { IconType } from 'react-icons/lib';
 
+type IconName =
+  | 'calendar'
+  | 'openedbook'
+  | 'closedbook'
+  | 'repository'
+  | 'github'
+  | 'organization'
+  | 'star'
+  | 'link'
+  | 'project'
+  | 'location'
+  | 'officeBuilding'
+  | 'forked'
+  | 'law'
+  | 'moon'
+  | 'sun'
+  | 'box';
+
 type Icon = {
-  name: string;
+  name: IconName;
   Icon: IconType;
 };
 
@@ -39,7 +57,7 @@ const icons: Icon[] = [
 ];
 
 export const loader = (
-  iconName: string,
+  iconName: IconName,
   fontSize?: string | number,
 ): JSX.Element => {
   const IconElement = icons.find(icon => icon.name === iconName);

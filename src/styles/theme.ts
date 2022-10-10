@@ -1,4 +1,5 @@
 type Sizes = {
+  xsmall: string;
   small: string;
   medium: string;
   large: string;
@@ -35,6 +36,7 @@ const theme: AppTheme = {
   typograph: {
     font: {
       size: {
+        xsmall: '0.75rem',
         small: '0.875rem',
         medium: '1rem',
         large: '1.5rem',
@@ -49,7 +51,7 @@ const theme: AppTheme = {
     secondary: '#adbac7',
     neutral: {
       white: '#f0f8ff',
-      black: '#161b22',
+      black: '#2d333b',
       gray: {
         50: '#adbac7',
         100: '#c9d1d9',
@@ -80,6 +82,7 @@ const theme: AppTheme = {
       secondary: '#444c56',
     },
     radius: {
+      xsmall: '',
       small: '6px',
       medium: '',
       large: '',
