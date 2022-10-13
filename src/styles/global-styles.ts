@@ -2,6 +2,10 @@ import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 ${({ theme }) => css`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     font-family: ${theme.typograph.font.family.main}, sans-serif;

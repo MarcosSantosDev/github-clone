@@ -13,6 +13,10 @@ export type AppTheme = {
         main: string;
       };
     };
+    weight: {
+      regular: number;
+      bold: number;
+    };
   };
   colors: {
     main: string;
@@ -22,6 +26,7 @@ export type AppTheme = {
       black: string;
       gray: Record<string, string>;
     };
+    vivid: Record<string, string>;
   };
   border: {
     colors: {
@@ -45,6 +50,10 @@ const theme: AppTheme = {
         main: 'Roboto',
       },
     },
+    weight: {
+      regular: 400,
+      bold: 600,
+    },
   },
   colors: {
     main: '#22272e',
@@ -55,11 +64,11 @@ const theme: AppTheme = {
       gray: {
         50: '#adbac7',
         100: '#c9d1d9',
-        150: '',
+        150: '#cdd9e5',
         200: '#85898b',
-        250: '',
+        250: '#8b949e',
         300: '#768390',
-        350: '',
+        350: '#636e7b66',
         400: '#373e47',
         450: '',
         500: '',
@@ -70,10 +79,13 @@ const theme: AppTheme = {
         750: '',
         800: '',
         850: '',
-        900: '',
+        900: '#909dab1f',
         950: '',
         1000: '',
       },
+    },
+    vivid: {
+      50: '#f9826c',
     },
   },
   border: {
