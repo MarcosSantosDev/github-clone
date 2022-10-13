@@ -20,11 +20,13 @@ export default {
   argTypes: {
     children: {
       type: 'string',
+      name: 'Label',
       description: 'Property to add label',
       defaultValue: 'Click me!',
     },
     fullWidth: {
       type: 'boolean',
+      name: 'Full width',
       defaultValue: false,
       description: 'Property to active full with button',
       control: 'inline-radio',
@@ -32,6 +34,7 @@ export default {
     },
     size: {
       type: 'string',
+      name: 'Size',
       defaultValue: 'small',
       description: 'Property to control size button',
       control: 'inline-radio',
