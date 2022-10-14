@@ -9,7 +9,7 @@ export const ContainerDiv = styled.footer`
     column-gap: 40px;
 
     margin: 0px 16px;
-    border-top: 1px solid ${theme.border.colors.main};
+    border-top: 1px solid ${theme.border.colors.secondary};
   `}
 `;
 

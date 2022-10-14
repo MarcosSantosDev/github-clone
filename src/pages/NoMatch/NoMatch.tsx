@@ -4,15 +4,11 @@ import { Button } from '@/common/components/structure';
 
 import * as S from './NoMatch.styles';
 
-type NoMatchProps = {
-  title: string;
-};
-
-const NoMatch = ({ title }: NoMatchProps) => {
+const NoMatch = () => {
   return (
     <S.ContainerDiv>
       <S.SpaceToImageDiv>
-        <S.TitleNotFoundPeopleCodeSpan>{title}</S.TitleNotFoundPeopleCodeSpan>
+        <S.TitleNotFoundPeopleCodeSpan>No Match!</S.TitleNotFoundPeopleCodeSpan>
       </S.SpaceToImageDiv>
       <S.NotFoundPeopleContainerDiv>
         <Link to="/github/MarcosSantosDev">

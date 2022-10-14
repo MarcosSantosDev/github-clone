@@ -84,11 +84,10 @@ export const Li = styled.li`
 
     & > a {
       text-decoration: none;
-      color: ${theme.colors.neutral.white};
+      color: ${theme.colors.neutral.gray[150]};
 
       &:hover {
         opacity: 0.5;
-        transition: 0.4s;
       }
     }
   `}
