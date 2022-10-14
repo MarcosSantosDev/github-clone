@@ -4,10 +4,10 @@ import { loader } from '@/common/icons';
 
 import * as S from './GlobalNavbar.styles';
 
-const GlobalNavbar = () => (
+export const GlobalNavbar = () => (
   <S.Header>
     <S.Nav>
-      <S.IconContainerDiv>{loader('github', 32)}</S.IconContainerDiv>
+      <S.IconContainerDiv>{loader('githubinverted', 30)}</S.IconContainerDiv>
 
       <S.InputWrapper>
         <S.InputSearch type="text" placeholder="Search or jump to…" />
@@ -31,5 +31,3 @@ const GlobalNavbar = () => (
     </S.Nav>
   </S.Header>
 );
-
-export default GlobalNavbar;

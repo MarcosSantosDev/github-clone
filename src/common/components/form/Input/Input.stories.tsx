@@ -17,6 +17,7 @@ export default {
   argTypes: {
     placeholder: {
       type: 'string',
+      name: 'Placeholder',
       description: 'Input placeholder',
       defaultValue: 'I am a placeholder...',
     },

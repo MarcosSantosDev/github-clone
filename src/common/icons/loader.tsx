@@ -1,59 +1,34 @@
-import { AiOutlineStar, AiOutlineLink, AiOutlineProject } from 'react-icons/ai';
-import { BsMoon, BsSun } from 'react-icons/bs';
-import { FaRegBuilding } from 'react-icons/fa';
-import { FiBox } from 'react-icons/fi';
-import { GiBookmark, GiBookmarklet } from 'react-icons/gi';
-import {
-  GoRepo,
-  GoRepoForked,
-  GoLocation,
-  GoLaw,
-  GoMarkGithub,
-  GoOrganization,
-  GoCalendar,
-} from 'react-icons/go';
 import { IconType } from 'react-icons/lib';
+import {
+  VscCircleSlash,
+  VscGithubInverted,
+  VscGraph,
+  VscOpenPreview,
+  VscLibrary,
+  VscExtensions,
+  VscStarFull,
+} from 'react-icons/vsc';
 
-type IconName =
-  | 'calendar'
-  | 'openedbook'
-  | 'closedbook'
-  | 'repository'
-  | 'github'
-  | 'organization'
-  | 'star'
-  | 'link'
-  | 'project'
-  | 'location'
-  | 'officeBuilding'
-  | 'forked'
-  | 'law'
-  | 'moon'
-  | 'sun'
-  | 'box';
+export type IconName =
+  | 'githubinverted'
+  | 'openPreview'
+  | 'graph'
+  | 'library'
+  | 'extensions'
+  | 'starfull';
 
-type Icon = {
+export type Icon = {
   name: IconName;
   Icon: IconType;
 };
 
-const icons: Icon[] = [
-  { name: 'calendar', Icon: GoCalendar },
-  { name: 'openedbook', Icon: GiBookmarklet },
-  { name: 'closedbook', Icon: GiBookmark },
-  { name: 'repository', Icon: GoRepo },
-  { name: 'github', Icon: GoMarkGithub },
-  { name: 'organization', Icon: GoOrganization },
-  { name: 'star', Icon: AiOutlineStar },
-  { name: 'link', Icon: AiOutlineLink },
-  { name: 'project', Icon: AiOutlineProject },
-  { name: 'location', Icon: GoLocation },
-  { name: 'officeBuilding', Icon: FaRegBuilding },
-  { name: 'forked', Icon: GoRepoForked },
-  { name: 'law', Icon: GoLaw },
-  { name: 'moon', Icon: BsMoon },
-  { name: 'sun', Icon: BsSun },
-  { name: 'box', Icon: FiBox },
+export const icons: Icon[] = [
+  { name: 'githubinverted', Icon: VscGithubInverted },
+  { name: 'openPreview', Icon: VscOpenPreview },
+  { name: 'library', Icon: VscLibrary },
+  { name: 'graph', Icon: VscGraph },
+  { name: 'extensions', Icon: VscExtensions },
+  { name: 'starfull', Icon: VscStarFull },
 ];
 
 export const loader = (
@@ -62,9 +37,9 @@ export const loader = (
 ): JSX.Element => {
   const IconElement = icons.find(icon => icon.name === iconName);
 
-  return IconElement ? (
-    <IconElement.Icon color="#6a737d" fontSize={fontSize} />
-  ) : (
-    <></>
-  );
+  if (IconElement) {
+    return <IconElement.Icon color="#6a737d" fontSize={fontSize} />;
+  }
+
+  return <VscCircleSlash color="#6a737d" fontSize={28} />;
 };

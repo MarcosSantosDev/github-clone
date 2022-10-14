@@ -32,7 +32,19 @@ describe('<Button />', () => {
     expect(element).toBeInTheDocument();
   });
 
-  it('should contain the specified value', () => {
+  it('should display the text in the component', () => {
+    renderWithTheme(
+      <Button type="button" data-testid="button-test">
+        Click me!
+      </Button>,
+    );
+
+    const element = screen.getByTestId('button-test');
+
+    expect(element.innerHTML).toEqual('Click me!');
+  });
+
+  it('must execute the handleClick function 1 time when calling the click event', () => {
     const handleClick = jest.fn();
 
     renderWithTheme(
@@ -45,7 +57,6 @@ describe('<Button />', () => {
 
     fireEvent.click(buttonElement);
 
-    expect(handleClick).toHaveBeenCalled();
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
