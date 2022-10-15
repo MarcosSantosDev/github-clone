@@ -4,6 +4,7 @@ import {
   Overview,
 } from '@/common/components/context/ProfileOverview';
 import type { TabOption } from '@/common/components/structure/Tab/Tab';
+import TabProvider from '@/common/components/structure/Tab/TabProvider';
 
 import * as S from './ProfileOverview.styles';
 
@@ -31,12 +32,13 @@ const DefaultProfile = () => {
   return (
     <S.ContainerDiv>
       <S.Nav>
-        <Navigation
-          profileLoginName="MarcosSantosDev"
-          profileUrlImg="https://avatars.githubusercontent.com/u/26147340?v=4"
-          tabs={tabs}
-          tabIdentifierActiveDefault={tabIdentifierActiveDefault}
-        />
+        <TabProvider tabIdentifierActiveDefault={tabIdentifierActiveDefault}>
+          <Navigation
+            profileLoginName="MarcosSantosDev"
+            profileUrlImg="https://avatars.githubusercontent.com/u/26147340?v=4"
+            tabs={tabs}
+          />
+        </TabProvider>
       </S.Nav>
       <S.Main>
         <S.ProfileContentAside>

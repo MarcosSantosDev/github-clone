@@ -22,7 +22,7 @@ export const Button = styled.button<ButtonProps>`
     justify-content: center;
     width: ${fullWidth ? '100%' : 'max-content'};
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     color: ${theme.colors.neutral.gray[50]};
     background-color: ${theme.colors.neutral.gray[400]};
     border: 1px solid ${theme.border.colors.main};

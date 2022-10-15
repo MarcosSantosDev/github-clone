@@ -4,8 +4,7 @@ import { icons } from '@/common/icons';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
 import Tab from './Tab';
-import type { TabOption } from './Tab';
-import TabProvider from './TabProvider';
+import type { TabProps } from './Tab';
 
 const iconOptions: string[] = icons.map(icon => icon.name);
 
@@ -14,18 +13,15 @@ export default {
   component: Tab,
   decorators: [
     Story => {
-      return (
-        <AppThemeProvider>
-          <TabProvider>{Story()}</TabProvider>
-        </AppThemeProvider>
-      );
+      return <AppThemeProvider>{Story()}</AppThemeProvider>;
     },
   ],
   args: {
     tabIdentifier: 'repositories',
-    // iconName: 'library',
+    iconName: 'library',
     label: 'Repositories',
     counter: 38,
+    tabActive: false,
   },
   argTypes: {
     tabIdentifier: {
@@ -36,7 +32,7 @@ export default {
     iconName: {
       type: 'string',
       name: 'Icon name',
-      // defaultValue: 'library',
+      defaultValue: 'library',
       control: 'inline-radio',
       options: iconOptions,
     },
@@ -50,9 +46,14 @@ export default {
       name: 'Counter',
       defaultValue: 38,
     },
+    tabActive: {
+      type: 'boolean',
+      name: 'Tab active',
+      defaultValue: false,
+      control: 'inline-radio',
+      options: [true, false],
+    },
   },
-} as Meta<TabOption>;
+} as Meta<TabProps>;
 
-export const Default: StoryObj<TabOption> = {
-  args: {},
-};
+export const Default: StoryObj<TabProps> = {};
