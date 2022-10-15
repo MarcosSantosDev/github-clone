@@ -1,5 +1,5 @@
 import Tab, { TabOption } from '@/common/components/structure/Tab/Tab';
-import TabProvider from '@/common/components/structure/Tab/TabProvider';
+import { useTabProviderContext } from '@/common/components/structure/Tab/TabProvider';
 
 import * as S from './Navigation.styles';
 
@@ -7,15 +7,20 @@ type NavigationProps = {
   profileLoginName: string;
   profileUrlImg: string;
   tabs: TabOption[];
-  tabIdentifierActiveDefault: string;
 };
 
 const Navigation = ({
   profileLoginName,
   profileUrlImg,
   tabs,
-  tabIdentifierActiveDefault,
 }: NavigationProps) => {
+  const { tabIdentifierActive, setTabIdentifierActive } =
+    useTabProviderContext();
+
+  const handleOnClickTab = (tab: string) => {
+    setTabIdentifierActive(tab);
+  };
+
   return (
     <S.ContainerDiv>
       <S.ProfileDiv>
@@ -23,11 +28,14 @@ const Navigation = ({
         <S.ProfileNameSpan>{profileLoginName}</S.ProfileNameSpan>
       </S.ProfileDiv>
       <S.TabOptionsDiv>
-        <TabProvider tabIdentifierActiveDefault={tabIdentifierActiveDefault}>
-          {tabs.map((tab, index) => (
-            <Tab {...tab} key={index.toString()} />
-          ))}
-        </TabProvider>
+        {tabs.map((tab, index) => (
+          <Tab
+            {...tab}
+            onClickTab={handleOnClickTab}
+            tabActive={tab.tabIdentifier === tabIdentifierActive}
+            key={index.toString()}
+          />
+        ))}
       </S.TabOptionsDiv>
     </S.ContainerDiv>
   );

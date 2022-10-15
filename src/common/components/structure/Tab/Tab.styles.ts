@@ -4,10 +4,11 @@ export const ContainerDiv = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
+    cursor: pointer;
+    width: fit-content;
+    height: 42px;
     border: 0px;
     border-bottom: 2px solid transparent;
-    cursor: pointer;
-    height: 42px;
 
     &.active {
       border-bottom-color: ${theme.colors.vivid[50]};

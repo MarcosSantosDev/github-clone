@@ -5,26 +5,24 @@ import { render, RenderOptions } from '@testing-library/react';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
 import Tab from './Tab';
-import type { TabOption } from './Tab';
-import TabProvider from './TabProvider';
+import type { TabProps } from './Tab';
 
 const renderWithProvider = (
   ui: React.ReactNode,
   options?: Omit<RenderOptions, 'queries'>,
 ) => {
-  return render(
-    <AppThemeProvider>
-      <TabProvider>{ui}</TabProvider>
-    </AppThemeProvider>,
-    options,
-  );
+  return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
 };
 
-const defaultValues: TabOption = {
+const defaultValues: TabProps = {
   tabIdentifier: 'repositories',
   iconName: 'library',
   label: 'Repositories',
   counter: 38,
+  tabActive: false,
+  onClickTab: () => {
+    //
+  },
 };
 
 describe('<Tab />', () => {

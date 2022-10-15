@@ -1,8 +1,9 @@
+import * as React from 'react';
+
 import { loader } from '@/common/icons';
 import type { IconName } from '@/common/icons/loader';
 
 import * as S from './Tab.styles';
-import { useTabProviderContext } from './TabProvider';
 
 export type TabOption = {
   tabIdentifier: string;
@@ -11,17 +12,23 @@ export type TabOption = {
   counter?: number;
 };
 
-type TabProps = TabOption;
+export type TabProps = TabOption & {
+  tabActive?: boolean;
+  onClickTab: (tab: string) => void;
+};
 
-const Tab = ({ tabIdentifier, iconName, label, counter }: TabProps) => {
-  const { tabIdentifierActive, setTabIdentifierActive } =
-    useTabProviderContext();
-
+const Tab = ({
+  tabIdentifier,
+  iconName,
+  label,
+  counter,
+  onClickTab,
+  tabActive = false,
+}: TabProps) => {
   const hasCounter = counter !== undefined;
-  const tabActive = tabIdentifier === tabIdentifierActive;
 
   const handleClickTab = () => {
-    setTabIdentifierActive(tabIdentifier);
+    onClickTab(tabIdentifier);
   };
 
   return (
@@ -38,4 +45,4 @@ const Tab = ({ tabIdentifier, iconName, label, counter }: TabProps) => {
   );
 };
 
-export default Tab;
+export default React.memo(Tab);
