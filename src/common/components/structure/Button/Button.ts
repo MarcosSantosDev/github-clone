@@ -21,6 +21,7 @@ export const Button = styled.button<ButtonProps>`
     align-items: center;
     justify-content: center;
     width: ${fullWidth ? '100%' : 'max-content'};
+    height: fit-content;
     text-align: center;
     font-size: 14px;
     color: ${theme.colors.neutral.gray[50]};
