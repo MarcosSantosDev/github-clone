@@ -1,13 +1,11 @@
+import * as React from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 
 import Tab, { TabOption } from '@/common/components/structure/Tab/Tab';
 
+import { user } from '../mock';
 import * as S from './Navigation.styles';
-
-type NavigationProps = {
-  profileLoginName: string;
-  profileUrlImg: string;
-};
 
 const tabs: TabOption[] = [
   { tabIdentifier: 'overview', iconName: 'openPreview', label: 'Overview' },
@@ -29,7 +27,7 @@ const tabs: TabOption[] = [
 
 const defaultTabActive = tabs[0].tabIdentifier;
 
-const getTabActive = (tabParam: string | null) => {
+function getTabActive(tabParam: string | null) {
   if (tabParam !== null) {
     const validTab = tabs.find(tab => tab.tabIdentifier === tabParam);
 
@@ -39,25 +37,53 @@ const getTabActive = (tabParam: string | null) => {
   }
 
   return defaultTabActive;
-};
+}
 
-const Navigation = ({ profileLoginName, profileUrlImg }: NavigationProps) => {
+function controlProfileNavigationClasses() {
+  const element = document.getElementById('profile-navigation');
+
+  if (element !== null) {
+    const documentElement = document.documentElement;
+    const { scrollTop, scrollHeight, clientHeight } = documentElement;
+
+    const scrollSizePercentage =
+      (100 * scrollTop) / (scrollHeight - clientHeight);
+
+    if (scrollSizePercentage > 40) {
+      element.classList.add('profile-navigation-visible');
+    } else if (scrollSizePercentage < 40) {
+      element.classList.remove('profile-navigation-visible');
+    }
+  }
+}
+
+function controlClassesByScroll() {
+  window.addEventListener('scroll', function () {
+    controlProfileNavigationClasses();
+  });
+}
+
+const Navigation = () => {
+  const { avatar_url, login } = user;
   const [searchParams, setSearchParams] = useSearchParams();
 
   const tabParam = searchParams.get('tab');
-
   const tabActive = getTabActive(tabParam);
 
   const handleOnClickTab = (tab: string) => {
     setSearchParams({ tab });
   };
 
+  React.useEffect(() => {
+    controlClassesByScroll();
+  }, []);
+
   return (
     <S.ContainerDiv>
-      <S.ProfileDiv>
-        <S.ProfileImg src={`${profileUrlImg}`} alt="small profile" />
-        <S.ProfileNameSpan>{profileLoginName}</S.ProfileNameSpan>
-      </S.ProfileDiv>
+      <S.ProfileNavigationDiv id="profile-navigation">
+        <S.ProfileImg src={avatar_url} alt="small profile" />
+        <S.ProfileNameSpan>{login}</S.ProfileNameSpan>
+      </S.ProfileNavigationDiv>
       <S.TabOptionsDiv>
         {tabs.map(tab => (
           <Tab

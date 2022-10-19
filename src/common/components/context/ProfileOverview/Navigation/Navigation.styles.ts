@@ -13,12 +13,23 @@ export const ContainerDiv = styled.div`
   `}
 `;
 
-export const ProfileDiv = styled.div`
+export const ProfileNavigationDiv = styled.div`
   display: flex;
   align-items: center;
   max-width: 400px;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.profile-navigation-visible {
+    opacity: 1;
+  }
+`;
+
+export const ProfileImg = styled(Img)`
+  margin-right: 10px;
+  width: 35px;
 `;
 
 export const ProfileNameSpan = styled.span`
@@ -26,11 +37,6 @@ export const ProfileNameSpan = styled.span`
   font-size: 14px;
   color: #adbac7;
   white-space: nowrap;
-`;
-
-export const ProfileImg = styled(Img)`
-  margin-right: 10px;
-  width: 35px;
 `;
 
 export const TabOptionsDiv = styled.div`

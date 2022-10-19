@@ -10,10 +10,7 @@ const DefaultProfile = () => {
   return (
     <S.ContainerDiv>
       <S.Nav>
-        <Navigation
-          profileLoginName="MarcosSantosDev"
-          profileUrlImg="https://avatars.githubusercontent.com/u/26147340?v=4"
-        />
+        <Navigation />
       </S.Nav>
       <S.Main>
         <S.ProfileContentAside>

@@ -11,9 +11,12 @@ export const ContainerDiv = styled.div`
 export const Nav = styled.nav`
   ${({ theme }) => css`
     grid-area: nav;
+
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: 3;
+
     height: 48px;
     margin-top: 24px;
     background: ${theme.colors.main};
@@ -32,8 +35,6 @@ export const Main = styled.main`
 
 export const ProfileContentAside = styled.aside`
   grid-area: aside;
-
-  background: #cdcdcd20;
 `;
 
 export const GeneralContentDiv = styled.div`
