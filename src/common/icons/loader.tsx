@@ -7,6 +7,11 @@ import {
   VscLibrary,
   VscExtensions,
   VscStarFull,
+  VscOrganization,
+  VscBriefcase,
+  VscLink,
+  VscMail,
+  VscLocation,
 } from 'react-icons/vsc';
 
 export type IconName =
@@ -15,7 +20,12 @@ export type IconName =
   | 'graph'
   | 'library'
   | 'extensions'
-  | 'starfull';
+  | 'starfull'
+  | 'organization'
+  | 'briefcase'
+  | 'link'
+  | 'mail'
+  | 'location';
 
 export type Icon = {
   name: IconName;
@@ -29,6 +39,11 @@ export const icons: Icon[] = [
   { name: 'graph', Icon: VscGraph },
   { name: 'extensions', Icon: VscExtensions },
   { name: 'starfull', Icon: VscStarFull },
+  { name: 'organization', Icon: VscOrganization },
+  { name: 'briefcase', Icon: VscBriefcase },
+  { name: 'link', Icon: VscLink },
+  { name: 'mail', Icon: VscMail },
+  { name: 'location', Icon: VscLocation },
 ];
 
 export const loader = (

@@ -1,4 +1,5 @@
 import { user } from '../mock';
+import Details from './Details/Details';
 import * as S from './Profile.styles';
 import ProfileInformation from './ProfileInformation/ProfileInformation';
 
@@ -10,6 +11,7 @@ const Profile = () => {
         login={user.login}
         name={user.name}
       />
+      <Details user={user} />
     </S.ContainerDiv>
   );
 };
