@@ -31,15 +31,10 @@ export const icons: Icon[] = [
   { name: 'starfull', Icon: VscStarFull },
 ];
 
-export const loader = (
-  iconName: IconName,
-  fontSize?: string | number,
-): JSX.Element => {
+export const loader = (iconName: IconName, fontSize?: string | number) => {
   const IconElement = icons.find(icon => icon.name === iconName);
 
   if (IconElement) {
     return <IconElement.Icon color="#6a737d" fontSize={fontSize} />;
   }
-
-  return <VscCircleSlash color="#6a737d" fontSize={28} />;
 };
