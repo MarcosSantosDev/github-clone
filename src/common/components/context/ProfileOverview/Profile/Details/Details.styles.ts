@@ -7,6 +7,7 @@ export const Container = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, min-content);
   row-gap: 16px;
+  width: 296px;
 `;
 
 export const Ul = styled.ul`
@@ -22,15 +23,13 @@ export const Li = styled.li`
   ${({ theme }) => css`
     list-style: none;
 
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    align-items: center;
-    column-gap: 6px;
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    color: ${theme.colors.secondary};
 
     span {
-      font-size: 14px;
-      color: ${theme.colors.secondary};
-      white-space: nowrap;
+      word-break: break-word;
     }
   `}
 `;
