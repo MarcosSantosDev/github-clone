@@ -7,21 +7,24 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: max-content auto auto;
-  justify-items: center;
+  grid-template-rows: repeat(4, auto);
+  row-gap: 16px;
+  max-width: inherit;
 `;
+
+const alignAvatarToTop = 40;
 
 export const ProfileImageContainerDiv = styled.div`
   position: relative;
-
   width: 296px;
-  height: 260px;
+  height: calc(296px - ${alignAvatarToTop}px);
+  margin: 0 auto;
 `;
 
 export const AvatarImg = styled(Img)`
   ${({ theme }) => css`
     position: absolute;
-    top: -40px;
+    top: -${alignAvatarToTop}px;
     z-index: 4;
 
     width: 296px;
@@ -30,15 +33,7 @@ export const AvatarImg = styled(Img)`
   `}
 `;
 
-export const NamesContainerDiv = styled.div`
-  z-index: 1;
-
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
-`;
+export const InformationContainerDiv = styled.div``;
 
 export const NameP = styled.p`
   margin: 0px;
@@ -54,4 +49,10 @@ export const LoginP = styled.p`
   font-weight: 400;
   line-height: normal;
   color: #768390;
+`;
+
+export const BiographyP = styled.p`
+  margin: 0px;
+  font-size: 16px;
+  line-height: normal;
 `;
