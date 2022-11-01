@@ -27,7 +27,7 @@ export const Button = styled.button<ButtonProps>`
     color: ${theme.colors.neutral.gray[50]};
     background-color: ${theme.colors.neutral.gray[400]};
     border: 1px solid ${theme.border.colors.main};
-    border-radius: 4px;
+    border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
 
