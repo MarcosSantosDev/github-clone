@@ -27,7 +27,7 @@ export const Main = styled.main`
   grid-area: main;
 
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 296px 1fr;
   grid-template-areas: 'aside content';
   column-gap: 24px;
   padding: 0px 32px;
