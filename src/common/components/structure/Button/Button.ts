@@ -21,12 +21,13 @@ export const Button = styled.button<ButtonProps>`
     align-items: center;
     justify-content: center;
     width: ${fullWidth ? '100%' : 'max-content'};
+    height: fit-content;
     text-align: center;
     font-size: 14px;
     color: ${theme.colors.neutral.gray[50]};
     background-color: ${theme.colors.neutral.gray[400]};
     border: 1px solid ${theme.border.colors.main};
-    border-radius: 4px;
+    border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
 

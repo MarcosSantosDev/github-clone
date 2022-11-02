@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ContainerDiv = styled.div`
-  display: flex;
+  display: grid;
   justify-content: center;
-  width: 350px;
-  height: 600px;
+  row-gap: 16px;
+  max-width: 296px;
 `;

@@ -1,24 +1,32 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
+import { Container } from '@/common/components/structure';
 import { Img } from '@/common/components/structure';
 
-export const ContainerDiv = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    border-bottom: 1px solid ${theme.border.colors.secondary};
-    padding: 0px 32px;
-    z-index: 3;
-  `}
+export const ContainerDiv = styled(Container)`
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: 0px 32px;
 `;
 
-export const ProfileDiv = styled.div`
+export const ProfileNavigationDiv = styled.div`
   display: flex;
   align-items: center;
   max-width: 400px;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.profile-navigation-visible {
+    opacity: 1;
+  }
+`;
+
+export const ProfileImg = styled(Img)`
+  margin-right: 10px;
+  width: 35px;
 `;
 
 export const ProfileNameSpan = styled.span`
@@ -26,11 +34,6 @@ export const ProfileNameSpan = styled.span`
   font-size: 14px;
   color: #adbac7;
   white-space: nowrap;
-`;
-
-export const ProfileImg = styled(Img)`
-  margin-right: 10px;
-  width: 35px;
 `;
 
 export const TabOptionsDiv = styled.div`

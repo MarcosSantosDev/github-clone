@@ -3,42 +3,14 @@ import {
   Profile,
   Overview,
 } from '@/common/components/context/ProfileOverview';
-import type { TabOption } from '@/common/components/structure/Tab/Tab';
-import TabProvider from '@/common/components/structure/Tab/TabProvider';
 
 import * as S from './ProfileOverview.styles';
 
-const tabs: TabOption[] = [
-  { tabIdentifier: 'overview', iconName: 'openPreview', label: 'Overview' },
-  {
-    tabIdentifier: 'repositories',
-    iconName: 'library',
-    label: 'Repositories',
-    counter: 38,
-  },
-  { tabIdentifier: 'projects', iconName: 'graph', label: 'Projects' },
-  { tabIdentifier: 'packages', iconName: 'extensions', label: 'Packages' },
-  {
-    tabIdentifier: 'stars',
-    iconName: 'starfull',
-    label: 'Stars',
-    counter: 143,
-  },
-];
-
 const DefaultProfile = () => {
-  const tabIdentifierActiveDefault = tabs[0].tabIdentifier;
-
   return (
     <S.ContainerDiv>
       <S.Nav>
-        <TabProvider tabIdentifierActiveDefault={tabIdentifierActiveDefault}>
-          <Navigation
-            profileLoginName="MarcosSantosDev"
-            profileUrlImg="https://avatars.githubusercontent.com/u/26147340?v=4"
-            tabs={tabs}
-          />
-        </TabProvider>
+        <Navigation />
       </S.Nav>
       <S.Main>
         <S.ProfileContentAside>
