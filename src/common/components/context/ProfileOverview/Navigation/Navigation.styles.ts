@@ -1,16 +1,13 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
+import { Container } from '@/common/components/structure';
 import { Img } from '@/common/components/structure';
 
-export const ContainerDiv = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    border-bottom: 1px solid ${theme.border.colors.secondary};
-    padding: 0px 32px;
-    z-index: 3;
-  `}
+export const ContainerDiv = styled(Container)`
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: 0px 32px;
 `;
 
 export const ProfileNavigationDiv = styled.div`

@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { Container } from '@/common/components/structure';
+
 export const ContainerDiv = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
@@ -16,14 +18,14 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 3;
-
     height: 48px;
     margin-top: 24px;
     background: ${theme.colors.main};
+    border-bottom: 1px solid ${theme.border.colors.secondary};
   `}
 `;
 
-export const Main = styled.main`
+export const Main = styled(Container)`
   grid-area: main;
 
   display: grid;
