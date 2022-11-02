@@ -5,8 +5,8 @@ import type { IconName } from '@/common/icons/loader';
 
 import * as S from './Tab.styles';
 
-export type TabOption = {
-  tabIdentifier: string;
+export type TabOption<T = string> = {
+  tabIdentifier: T;
   iconName?: IconName;
   label: string;
   counter?: number;

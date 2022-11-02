@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { Button } from '@/common/components/structure';
 import { User } from '@/common/types';
 
@@ -36,4 +38,4 @@ const ProfileInformation = ({
   );
 };
 
-export default ProfileInformation;
+export default React.memo(ProfileInformation);
