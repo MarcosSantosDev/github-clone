@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { loader } from '@/common/icons';
 import type { IconName } from '@/common/icons';
 import { User } from '@/common/types';
@@ -47,4 +49,4 @@ const Details = ({ user }: DetailsProps) => {
   );
 };
 
-export default Details;
+export default React.memo(Details);
