@@ -49,12 +49,12 @@ export const icons: Icon[] = [
 export const loader = (
   iconName: IconName,
   fontSize?: string | number,
-): JSX.Element => {
+): JSX.Element | undefined => {
   const IconElement = icons.find(icon => icon.name === iconName);
 
   if (IconElement) {
     return <IconElement.Icon color="#6a737d" fontSize={fontSize} />;
   }
 
-  return <VscCircleSlash color="#6a737d" fontSize={28} />;
+  return;
 };
