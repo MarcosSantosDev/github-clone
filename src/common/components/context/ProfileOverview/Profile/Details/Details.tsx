@@ -12,7 +12,10 @@ type DetailsList = {
 };
 
 type DetailsProps = {
-  user: User;
+  user: Pick<
+    User,
+    'company' | 'blog' | 'location' | 'email' | 'followers' | 'following'
+  >;
 };
 
 const Details = ({ user }: DetailsProps) => {
