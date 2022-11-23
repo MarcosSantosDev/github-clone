@@ -2,10 +2,10 @@ import { render, screen, RenderOptions } from '@testing-library/react';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
-import ProfileInformation from './ProfileInformation';
+import Information from './Information';
 
 const information = {
-  avatar_url: 'https://avatars.githubusercontent.com/u/26147340?v: 4',
+  avatar_url: 'https://avatars.githubusercontent.com/u/26147340?v:4',
   name: 'Marcos Adriano Ferreira Dos Santos,',
   login: 'MarcosSantosDev',
   bio: 'Frontend Engineer',
@@ -18,10 +18,10 @@ const renderWithTheme = (
   return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
 };
 
-describe('<ProfileInformation />', () => {
+describe('<Information />', () => {
   it('should render in the document', () => {
     renderWithTheme(
-      <ProfileInformation
+      <Information
         {...information}
         onEditProfile={() => {
           //

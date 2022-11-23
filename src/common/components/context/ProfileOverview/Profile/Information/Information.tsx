@@ -3,22 +3,22 @@ import * as React from 'react';
 import { Button } from '@/common/components/structure';
 import { User } from '@/common/types';
 
-import * as S from './ProfileInformation.styles';
+import * as S from './Information.styles';
 
-type ProfileInformationProps = Pick<
+export type InformationProps = Pick<
   User,
   'avatar_url' | 'name' | 'login' | 'bio'
 > & {
   onEditProfile: () => void;
 };
 
-const ProfileInformation = ({
+const Information = ({
   avatar_url,
   name,
   login,
   bio,
   onEditProfile,
-}: ProfileInformationProps) => {
+}: InformationProps) => {
   return (
     <S.Container>
       <S.ProfileImageContainerDiv>
@@ -38,4 +38,4 @@ const ProfileInformation = ({
   );
 };
 
-export default React.memo(ProfileInformation);
+export default React.memo(Information);

@@ -24,14 +24,12 @@ describe('<Details />', () => {
   it('should render in the document', () => {
     renderWithTheme(
       <Details
-        user={{
-          company: user.company,
-          blog: user.blog,
-          location: user.location,
-          email: user.email,
-          followers: user.followers,
-          following: user.following,
-        }}
+        company={user.company}
+        blog={user.blog}
+        location={user.location}
+        email={user.email}
+        followers={user.followers}
+        following={user.following}
       />,
     );
 
