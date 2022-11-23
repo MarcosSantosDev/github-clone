@@ -3,7 +3,7 @@ import { loader } from '@/common/icons/loader';
 
 import * as S from './GlobalFooter.styles';
 
-export const GlobalFooter = () => (
+const GlobalFooter = () => (
   <S.ContainerDiv>
     <S.ContainerIncDiv>
       <div>{loader('githubinverted', 24)}</div>
@@ -48,3 +48,5 @@ export const GlobalFooter = () => (
     </S.Nav>
   </S.ContainerDiv>
 );
+
+export default GlobalFooter;
