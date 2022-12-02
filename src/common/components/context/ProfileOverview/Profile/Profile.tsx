@@ -1,23 +1,21 @@
-import { user } from '../mock';
-import Details from './Details/Details';
+import Details, { DetailsProps } from './Details/Details';
+import Information, { InformationProps } from './Information/Information';
 import * as S from './Profile.styles';
-import ProfileInformation from './ProfileInformation/ProfileInformation';
 
-const Profile = () => {
+type ProfileProps = {
+  information: Omit<InformationProps, 'onEditProfile'>;
+  details: DetailsProps;
+};
+
+const Profile = ({ information, details }: ProfileProps) => {
   const handleEditProfile = () => {
     //
   };
 
   return (
     <S.ContainerDiv>
-      <ProfileInformation
-        avatar_url={user.avatar_url}
-        login={user.login}
-        name={user.name}
-        bio={user.bio}
-        onEditProfile={handleEditProfile}
-      />
-      <Details user={user} />
+      <Information {...information} onEditProfile={handleEditProfile} />
+      <Details {...details} />
     </S.ContainerDiv>
   );
 };

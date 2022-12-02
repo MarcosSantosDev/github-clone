@@ -18,7 +18,6 @@ const renderWithTheme = (
   return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
 };
 
-// adicionar contexto de tema da aplicação para funcionar
 describe('<Button />', () => {
   it('should contains in the document', () => {
     renderWithTheme(
@@ -30,6 +29,62 @@ describe('<Button />', () => {
     const element = screen.getByTestId('button-test');
 
     expect(element).toBeInTheDocument();
+  });
+
+  it('should have in its style a width of 100%', () => {
+    renderWithTheme(
+      <Button type="button" fullWidth data-testid="button-test">
+        Click me!
+      </Button>,
+    );
+
+    const element = screen.getByTestId('button-test');
+
+    expect(element).toHaveStyle({
+      width: '100%',
+    });
+  });
+
+  it('should keep the "small" style when informing the "size" property as "small"', () => {
+    renderWithTheme(
+      <Button type="button" size="small" data-testid="button-test">
+        Click me!
+      </Button>,
+    );
+
+    const element = screen.getByTestId('button-test');
+
+    expect(element).toHaveStyle({
+      padding: '4px 6px',
+    });
+  });
+
+  it('should keep the "medium" style when informing the "size" property as "medium"', () => {
+    renderWithTheme(
+      <Button type="button" size="medium" data-testid="button-test">
+        Click me!
+      </Button>,
+    );
+
+    const element = screen.getByTestId('button-test');
+
+    expect(element).toHaveStyle({
+      padding: '8px 12px',
+    });
+  });
+
+  it('should keep the "large" style when informing the "size" property as "large"', () => {
+    renderWithTheme(
+      <Button type="button" size="large" data-testid="button-test">
+        Click me!
+      </Button>,
+    );
+
+    const element = screen.getByTestId('button-test');
+
+    expect(element).toHaveStyle({
+      padding: '16px 32px',
+    });
   });
 
   it('should display the text in the component', () => {

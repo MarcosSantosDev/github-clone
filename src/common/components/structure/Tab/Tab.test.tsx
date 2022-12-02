@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { render, RenderOptions } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
@@ -30,5 +31,58 @@ describe('<Tab />', () => {
     const element = renderWithProvider(<Tab {...defaultValues} />);
 
     expect(element).toBeTruthy();
+  });
+
+  it('should have the active class', () => {
+    const { getByTestId } = renderWithProvider(
+      <Tab {...defaultValues} tabActive data-testid="tab" />,
+    );
+
+    const element = getByTestId('tab');
+
+    expect(element).toHaveClass('active');
+  });
+
+  it('should not have the active class', () => {
+    const { getByTestId } = renderWithProvider(
+      <Tab {...defaultValues} data-testid="tab" />,
+    );
+
+    const element = getByTestId('tab');
+
+    expect(element).not.toHaveClass('active');
+  });
+
+  it('should render the svg icon', () => {
+    const { getByTestId } = renderWithProvider(
+      <Tab {...defaultValues} data-testid="tab" />,
+    );
+
+    const element = getByTestId('tab');
+
+    expect(element).toContainHTML('</svg>');
+  });
+
+  it('should return clicked tab', () => {
+    const onClickTabMockCallback = jest.fn((tabIdentifier: string) => {
+      return tabIdentifier;
+    });
+
+    const { getByTestId } = renderWithProvider(
+      <Tab
+        {...defaultValues}
+        onClickTab={onClickTabMockCallback}
+        data-testid="tab"
+      />,
+    );
+
+    const element = getByTestId('tab');
+
+    userEvent.click(element);
+
+    const { calls, results } = onClickTabMockCallback.mock;
+
+    expect(calls.length).toBe(1);
+    expect(results[0].value).toBe(defaultValues.tabIdentifier);
   });
 });

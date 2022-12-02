@@ -12,10 +12,11 @@ export type TabOption<T = string> = {
   counter?: number;
 };
 
-export type TabProps = TabOption & {
-  tabActive?: boolean;
-  onClickTab: (tab: string) => void;
-};
+export type TabProps = TabOption &
+  React.HTMLAttributes<HTMLDivElement> & {
+    tabActive?: boolean;
+    onClickTab: (tab: string) => void;
+  };
 
 const Tab = ({
   tabIdentifier,
@@ -23,7 +24,8 @@ const Tab = ({
   label,
   counter,
   onClickTab,
-  tabActive = false,
+  tabActive,
+  ...restProps
 }: TabProps) => {
   const hasCounter = counter !== undefined;
 
@@ -33,11 +35,12 @@ const Tab = ({
 
   return (
     <S.ContainerDiv
+      {...restProps}
       className={tabActive ? 'active' : ''}
       onClick={handleClickTab}
     >
       <S.TabContentDiv>
-        {iconName ? <S.TabIcon>{loader(iconName, 18)}</S.TabIcon> : null}
+        {iconName && <S.TabIcon>{loader(iconName, 18)}</S.TabIcon>}
         <S.TabSpan>{label}</S.TabSpan>
         {hasCounter && <S.TabCounter>{counter}</S.TabCounter>}
       </S.TabContentDiv>

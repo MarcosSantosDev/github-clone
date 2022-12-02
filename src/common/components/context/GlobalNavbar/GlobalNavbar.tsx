@@ -4,7 +4,7 @@ import { loader } from '@/common/icons';
 
 import * as S from './GlobalNavbar.styles';
 
-export const GlobalNavbar = () => (
+const GlobalNavbar = () => (
   <S.Header>
     <S.Nav>
       <S.IconContainerDiv>{loader('githubinverted', 30)}</S.IconContainerDiv>
@@ -31,3 +31,5 @@ export const GlobalNavbar = () => (
     </S.Nav>
   </S.Header>
 );
+
+export default GlobalNavbar;

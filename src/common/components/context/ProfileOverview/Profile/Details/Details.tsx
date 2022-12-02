@@ -11,13 +11,19 @@ type DetailsList = {
   information: string | null;
 };
 
-type DetailsProps = {
-  user: User;
-};
+export type DetailsProps = Pick<
+  User,
+  'company' | 'blog' | 'location' | 'email' | 'followers' | 'following'
+>;
 
-const Details = ({ user }: DetailsProps) => {
-  const { company, blog, location, email, followers, following } = user;
-
+const Details = ({
+  company,
+  blog,
+  location,
+  email,
+  followers,
+  following,
+}: DetailsProps) => {
   const detailsList: DetailsList[] = [
     { iconName: 'briefcase', information: company },
     { iconName: 'location', information: location },
