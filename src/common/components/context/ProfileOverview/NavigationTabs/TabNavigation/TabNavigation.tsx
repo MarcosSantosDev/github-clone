@@ -32,7 +32,7 @@ function controlClassesByScroll() {
   });
 }
 
-const Navigation = () => {
+const TabNavigation = () => {
   const { avatar_url, login, public_repos } = user;
   const { setTab, tab } = useTab();
 
@@ -54,7 +54,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <S.ContainerDiv>
+    <S.ContainerDiv data-testid="tab-navigation">
       <S.ProfileNavigationDiv id="profile-navigation">
         <S.ProfileImg src={avatar_url} alt="small profile" />
         <S.ProfileNameSpan>{login}</S.ProfileNameSpan>
@@ -74,4 +74,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default TabNavigation;
