@@ -1,6 +1,6 @@
 import { LinkProps as LinkRRDProps } from 'react-router-dom';
 
-import theme from '@/styles/theme';
+import { blackTheme } from '@/styles/themes';
 
 import * as S from './Link.styles';
 
@@ -23,24 +23,26 @@ function getLinkCustomStyles({
   'size' | 'bold' | 'disableUnderline'
 >): React.CSSProperties {
   const staticStyles = {
-    fontWeight: bold ? 'bold' : 'normal',
+    fontWeight: bold
+      ? blackTheme.typograph.weight.bold
+      : blackTheme.typograph.weight.regular,
     textDecoration: disableUnderline ? 'none' : undefined,
   };
 
   switch (size) {
     case 'large':
       return {
-        fontSize: theme.typograph.font.size.large,
+        fontSize: blackTheme.typograph.font.size.large,
         ...staticStyles,
       };
     case 'medium':
       return {
-        fontSize: theme.typograph.font.size.medium,
+        fontSize: blackTheme.typograph.font.size.small,
         ...staticStyles,
       };
     default:
       return {
-        fontSize: theme.typograph.font.size.xsmall,
+        fontSize: blackTheme.typograph.font.size.xxsmall,
         ...staticStyles,
       };
       break;

@@ -11,7 +11,7 @@ export const ContainerDiv = styled.div`
     border-bottom: 2px solid transparent;
 
     &.active {
-      border-bottom-color: ${theme.colors.vivid[50]};
+      border-bottom-color: ${theme.colors.border.normal[5]};
 
       span {
         font-weight: ${theme.typograph.weight.bold};
@@ -28,11 +28,11 @@ export const TabContentDiv = styled.div`
     align-items: center;
     height: 30px;
     padding: 0px 8px;
-    border-radius: 8px;
+    border-radius: ${theme.radius.small};
 
     transition: background-color 0.5s;
     &:hover {
-      background: ${theme.colors.neutral.gray[900]};
+      background: ${theme.colors.background.hover[3]};
     }
   `}
 `;
@@ -44,7 +44,7 @@ export const TabIcon = styled.div`
     align-items: center;
 
     svg {
-      fill: ${theme.colors.neutral.gray[250]};
+      fill: ${theme.colors.text.normal[8]};
     }
   `}
 `;
@@ -52,7 +52,7 @@ export const TabIcon = styled.div`
 export const TabSpan = styled.span`
   ${({ theme }) => css`
     font-size: 14px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.text.normal[3]};
     white-space: nowrap;
   `}
 `;
@@ -64,8 +64,8 @@ export const TabCounter = styled.div`
     padding: 0 6px;
     font-size: 12px;
     text-align: center;
-    border-radius: 32px;
-    color: ${theme.colors.neutral.gray[250]};
-    background-color: ${theme.colors.neutral.gray[350]};
+    border-radius: ${theme.radius.medium};
+    color: ${theme.colors.text.normal[8]};
+    background-color: ${theme.colors.background.normal[1]};
   `}
 `;

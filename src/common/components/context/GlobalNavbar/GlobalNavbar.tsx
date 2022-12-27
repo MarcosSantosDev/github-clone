@@ -7,7 +7,7 @@ import * as S from './GlobalNavbar.styles';
 const GlobalNavbar = () => (
   <S.Header>
     <S.Nav>
-      <S.IconContainerDiv>{loader('githubinverted', 30)}</S.IconContainerDiv>
+      <S.IconContainerDiv>{loader('githubinverted', 32)}</S.IconContainerDiv>
 
       <S.InputWrapper>
         <S.InputSearch type="text" placeholder="Search or jump to…" />
@@ -20,6 +20,9 @@ const GlobalNavbar = () => (
         </S.Li>
         <S.Li>
           <Link to={window.location.pathname}>Issues</Link>
+        </S.Li>
+        <S.Li>
+          <Link to={window.location.pathname}>Codespaces</Link>
         </S.Li>
         <S.Li>
           <Link to={window.location.pathname}>Marketplace</Link>

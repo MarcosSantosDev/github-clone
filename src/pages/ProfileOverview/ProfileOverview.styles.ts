@@ -20,8 +20,8 @@ export const Nav = styled.nav`
     z-index: 3;
     height: 48px;
     margin-top: 24px;
-    background: ${theme.colors.main};
-    border-bottom: 1px solid ${theme.border.colors.secondary};
+    background-color: ${theme.colors.background.normal[4]};
+    border-bottom: 1px solid ${theme.colors.border.normal[3]};
   `}
 `;
 
@@ -40,7 +40,8 @@ export const ProfileContentAside = styled.aside`
 `;
 
 export const GeneralContentDiv = styled.div`
-  grid-area: content;
-
-  background: #cdcdcd20;
+  ${({ theme }) => css`
+    grid-area: content;
+    background: ${theme.colors.background.normal[1]};
+  `}
 `;

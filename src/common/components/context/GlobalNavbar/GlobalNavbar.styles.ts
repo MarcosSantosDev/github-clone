@@ -7,8 +7,8 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     grid-area: header;
-    background: ${theme.colors.neutral.black};
-    color: ${theme.colors.neutral.white};
+    background: ${theme.colors.background.normal[3]};
+    color: ${theme.colors.text.normal[2]};
     padding: 16px 32px;
     max-width: 100%;
     max-height: 60px;
@@ -24,30 +24,39 @@ export const Nav = styled.nav`
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
+    width: 272px;
+    height: 28px;
+    border: 1px solid ${theme.colors.border.normal[2]};
+    border-radius: ${theme.radius.small};
+    background-color: ${theme.colors.background.normal[4]};
 
     input + .input-hack {
       position: absolute;
-      right: 6px;
-      top: 6px;
-      width: 25px;
+      right: 4px;
+      top: 3px;
+      width: 22px;
       height: 20px;
-      color: ${theme.colors.neutral.gray[200]};
+      color: ${theme.colors.text.normal[3]};
       background: trasparent;
-      border: 1px solid ${theme.border.colors.secondary};
-      border-radius: 5px;
-      font-size: 12px;
+      font-size: ${theme.typograph.font.size.xxsmall};
       text-align: center;
       line-height: 1.5;
+    }
+
+    .input-hack {
+      border: 1px solid ${theme.colors.border.normal[2]};
+      border-radius: ${theme.radius.small};
     }
   `}
 `;
 
 export const InputSearch = styled(Input)`
   ${({ theme }) => css`
-    width: 272px;
-    color: ${theme.colors.neutral.white};
-    border-radius: 5px;
-    font-size: 14px;
+    width: 100%;
+    height: 20px;
+    color: ${theme.colors.text.normal[1]};
+    border: none;
+    font-size: ${theme.typograph.font.size.xsmall};
     outline: none;
     transition: 0.5s;
 
@@ -56,7 +65,7 @@ export const InputSearch = styled(Input)`
     }
 
     &::placeholder {
-      color: ${theme.colors.neutral.gray[100]};
+      color: ${theme.colors.text.normal[2]};
       font-size: 14px;
     }
   `}
@@ -79,15 +88,16 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   ${({ theme }) => css`
+    font-size: ${theme.typograph.font.size.xsmall};
     font-weight: 600;
     white-space: nowrap;
 
     & > a {
       text-decoration: none;
-      color: ${theme.colors.neutral.gray[150]};
+      color: ${theme.colors.text.normal[2]};
 
       &:hover {
-        opacity: 0.5;
+        color: ${theme.colors.text.normal[3]};
       }
     }
   `}
@@ -100,10 +110,10 @@ export const IconContainerDiv = styled.div`
     height: 32px;
 
     > svg {
-      fill: ${theme.colors.neutral.white};
+      fill: ${theme.colors.text.normal[2]};
 
       &:hover {
-        fill: ${theme.colors.neutral.gray[100]};
+        fill: ${theme.colors.text.normal[3]};
         transition: 0.4s;
       }
     }
