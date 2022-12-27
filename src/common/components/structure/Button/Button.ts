@@ -24,10 +24,10 @@ export const Button = styled.button<ButtonProps>`
     height: fit-content;
     text-align: center;
     font-size: 14px;
-    color: ${theme.colors.neutral.gray[50]};
-    background-color: ${theme.colors.neutral.gray[400]};
-    border: 1px solid ${theme.border.colors.main};
-    border-radius: 6px;
+    color: ${theme.colors.text.normal[3]};
+    background-color: ${theme.colors.background.normal[2]};
+    border: 1px solid ${theme.colors.border.normal[3]};
+    border-radius: ${theme.radius.small};
     text-decoration: none;
     cursor: pointer;
 

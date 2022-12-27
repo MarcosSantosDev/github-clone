@@ -1,11 +1,13 @@
 import { Link as LinkReactRouterDom } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Link = styled(LinkReactRouterDom)`
-  text-decoration: none;
-  color: #539bf5;
+  ${({ theme }) => css`
+    text-decoration: none;
+    color: ${theme.colors.text.normal[7]};
 
-  :hover {
-    text-decoration: underline;
-  }
+    :hover {
+      text-decoration: underline;
+    }
+  `}
 `;

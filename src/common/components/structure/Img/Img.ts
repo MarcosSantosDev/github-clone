@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Img = styled.img`
-  ${({ width = 'auto', height = 'auto' }) => css`
-    border-radius: 50%;
+  ${({ theme, width = 'auto', height = 'auto' }) => css`
+    border-radius: ${theme.radius.circle};
     width: ${width};
     height: ${height};
     background-size: cover;

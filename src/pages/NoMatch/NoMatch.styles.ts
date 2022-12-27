@@ -9,7 +9,7 @@ export const SpaceToImageDiv = styled.div`
     align-items: center;
 
     height: calc(100vh - 400px);
-    background: ${theme.colors.neutral.white};
+    background: ${theme.colors.background.normal[1]};
   `}
 `;
 
@@ -49,6 +49,6 @@ export const FormContentDiv = styled.div`
 export const NotFoundPeopleLabel = styled.label`
   ${({ theme }) => css`
     font-weight: 400;
-    color: ${theme.colors.neutral.gray[300]};
+    color: ${theme.colors.text.normal[4]};
   `}
 `;

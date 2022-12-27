@@ -9,7 +9,7 @@ export const ContainerDiv = styled.footer`
     column-gap: 40px;
 
     margin: 0px 16px;
-    border-top: 1px solid ${theme.border.colors.secondary};
+    border-top: 1px solid ${theme.colors.border.normal[3]};
   `}
 `;
 
@@ -21,8 +21,8 @@ export const ContainerIncDiv = styled.div`
     column-gap: 10px;
 
     span {
-      font-size: ${theme.typograph.font.size.xsmall};
-      color: #768390;
+      font-size: ${theme.typograph.font.size.xxsmall};
+      color: ${theme.colors.text.normal[4]};
     }
   `}
 `;

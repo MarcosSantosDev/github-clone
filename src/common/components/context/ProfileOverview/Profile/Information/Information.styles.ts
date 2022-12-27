@@ -29,7 +29,7 @@ export const AvatarImg = styled(Img)`
 
     width: 296px;
     height: 296px;
-    border: 2px solid ${theme.border.colors.main};
+    border: 2px solid ${theme.colors.border.normal[3]};
   `}
 `;
 
@@ -43,12 +43,14 @@ export const NameP = styled.p`
 `;
 
 export const LoginP = styled.p`
-  margin: 0px;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: #768390;
+  ${({ theme }) => css`
+    margin: 0px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: ${theme.colors.text.normal[4]};
+  `}
 `;
 
 export const BiographyP = styled.p`

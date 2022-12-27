@@ -26,7 +26,7 @@ export const Li = styled.li`
     display: flex;
     gap: 8px;
     font-size: 14px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.text.normal[3]};
 
     span {
       word-break: break-word;

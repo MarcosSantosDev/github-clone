@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Container } from '@/common/components/structure';
 import { Img } from '@/common/components/structure';
@@ -13,7 +13,7 @@ export const ContainerDiv = styled(Container)`
 export const ProfileNavigationDiv = styled.div`
   display: flex;
   align-items: center;
-  max-width: 400px;
+  max-width: 340px;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -30,10 +30,12 @@ export const ProfileImg = styled(Img)`
 `;
 
 export const ProfileNameSpan = styled.span`
-  font-weight: 600;
-  font-size: 14px;
-  color: #adbac7;
-  white-space: nowrap;
+  ${({ theme }) => css`
+    font-weight: 600;
+    font-size: 14px;
+    color: ${theme.colors.text.normal[3]};
+    white-space: nowrap;
+  `}
 `;
 
 export const TabOptionsDiv = styled.div`

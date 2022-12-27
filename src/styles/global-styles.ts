@@ -11,8 +11,13 @@ ${({ theme }) => css`
     font-family: ${theme.typograph.font.family.main}, sans-serif;
     font-size: ${theme.typograph.font.size.small};
     line-height: 1.5;
-    color: ${theme.colors.secondary};
-    background-color: ${theme.colors.main};
+    color: ${theme.colors.text.normal[3]};
+    background-color: ${theme.colors.background.normal[4]};
+
+    .global-icon-color {
+      color: ${theme.colors.text.normal[4]};
+      fill: ${theme.colors.text.normal[4]};
+    }
   }
 `}
 
