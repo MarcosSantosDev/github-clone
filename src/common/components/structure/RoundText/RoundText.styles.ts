@@ -104,6 +104,8 @@ function getRoundTextVariantCSS(
 export const RoundTextContainerDiv = styled.div<RoundTextContainerDivProps>`
   ${({ type, variant, spacing = '1' }) => css`
     display: inline-block;
+    width: min-content;
+    height: min-content;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
