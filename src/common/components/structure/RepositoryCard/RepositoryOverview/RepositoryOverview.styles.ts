@@ -29,6 +29,7 @@ export const RepositoryContainerDiv = styled.div`
     '. projectActions';
   row-gap: 12px;
   padding: 24px 0;
+  height: min-content;
   box-sizing: border-box;
   border-top: 1px solid #373e47;
   border-bottom: 1px solid #373e47;
