@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { formatDistanceStrict, subDays } from 'date-fns';
+import { formatDistanceStrict } from 'date-fns';
 
 import { Link, RoundText } from '@/common/components/structure';
 import { loader } from '@/common/icons';
@@ -10,36 +10,12 @@ import { languages_colors } from '@/static/colors.json';
 import * as S from './RepositoryOverview.styles';
 
 export type RepositoryOverviewProps = React.HTMLAttributes<HTMLDivElement> & {
-  repository: {
-    name: string;
-    description: string;
-    private: boolean;
-    stars: number;
-    updatedAt: string;
-    language: string;
-    license: string;
-    topics: string[];
-    forks: number;
-  };
+  repository: Repository;
 };
 
 export type LanguageColors = {
   [key: string]: string | null;
 };
-
-export function formatRepositoryToOverviewComponent(repository: Repository) {
-  return {
-    name: repository.name,
-    description: repository.description,
-    forks: repository.forks,
-    language: repository.language,
-    license: repository.license || '',
-    private: repository.private,
-    stars: repository.stargazers_count,
-    topics: repository.topics,
-    updatedAt: repository.updated_at,
-  };
-}
 
 function limitTextAndAddEllipsis(text: string, endSize = 0) {
   const isVeryBig = text.length > endSize;
@@ -83,11 +59,11 @@ const RepositoryOverview = ({
           />
         </S.RepositoryNameContentDiv>
         <S.Paragraph>
-          {limitTextAndAddEllipsis(repository.description, 200)}
+          {limitTextAndAddEllipsis(repository.description || '', 200)}
         </S.Paragraph>
       </S.RepositoryCoreInfoWrapperDiv>
       <S.RepositoryTopicWrapperDiv>
-        {repository.topics.map(topic => (
+        {repository.topics.slice(0, 7).map(topic => (
           <RoundText
             key={topic}
             content={topic}
@@ -104,22 +80,22 @@ const RepositoryOverview = ({
             <S.Paragraph>{repository.language}</S.Paragraph>
           </S.SummaryContainerDiv>
         ) : null}
-        {repository.stars > 0 ? (
+        {repository.stargazers_count > 0 ? (
           <S.SummaryContainerDiv>
             {loader('regstar', 15)}
-            <S.Paragraph>1</S.Paragraph>
+            <S.Paragraph>{repository.stargazers_count}</S.Paragraph>
           </S.SummaryContainerDiv>
         ) : null}
         {repository.license ? (
           <S.SummaryContainerDiv>
             {loader('law', 15)}
-            <S.Paragraph>{repository.license} License</S.Paragraph>
+            <S.Paragraph>{repository.license.name}</S.Paragraph>
           </S.SummaryContainerDiv>
         ) : null}
-        {repository.updatedAt ? (
+        {repository.updated_at ? (
           <S.SummaryContainerDiv>
             <S.Paragraph>
-              Updated {formatDate(repository.updatedAt)}
+              Updated {formatDate(repository.updated_at)}
             </S.Paragraph>
           </S.SummaryContainerDiv>
         ) : null}

@@ -5,9 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
 import { repositoryMocked } from './mock';
-import RepositoryOverviewComponent, {
-  formatRepositoryToOverviewComponent,
-} from './RepositoryOverview';
+import RepositoryOverviewComponent from './RepositoryOverview';
 import type { RepositoryOverviewProps } from './RepositoryOverview';
 
 export default {
@@ -23,7 +21,7 @@ export default {
     },
   ],
   args: {
-    repository: formatRepositoryToOverviewComponent(repositoryMocked),
+    repository: repositoryMocked,
   },
   argTypes: {},
 } as Meta<RepositoryOverviewProps>;

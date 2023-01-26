@@ -7,9 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
 import { repositoryMocked } from './mock';
-import RepositoryOverview, {
-  formatRepositoryToOverviewComponent,
-} from './RepositoryOverview';
+import RepositoryOverview from './RepositoryOverview';
 
 const renderWithTheme = (
   ui: React.ReactNode,
@@ -28,7 +26,7 @@ describe('<RepositoryOverview />', () => {
     renderWithTheme(
       <RepositoryOverview
         data-testid="card-test"
-        repository={formatRepositoryToOverviewComponent(repositoryMocked)}
+        repository={repositoryMocked}
       />,
     );
 
@@ -41,7 +39,7 @@ describe('<RepositoryOverview />', () => {
     renderWithTheme(
       <RepositoryOverview
         data-testid="card-test"
-        repository={formatRepositoryToOverviewComponent(repositoryMocked)}
+        repository={repositoryMocked}
       />,
     );
 
