@@ -10,16 +10,56 @@ const Repositories = () => {
       <S.RepositorySearchWrapperDiv>
         <Input type="text" placeholder="Find a repository..." />
         <S.RepositorySearchButtonGroupDiv>
-          <Button type="button" size="medium">
+          <Button
+            type="button"
+            title="type"
+            aria-label="type"
+            size="medium"
+            icon={{
+              name: 'sortDown',
+              side: 'right',
+              size: 10,
+            }}
+          >
             Type
           </Button>
-          <Button type="button" size="medium">
+          <Button
+            type="button"
+            title="language"
+            aria-label="language"
+            size="medium"
+            icon={{
+              name: 'sortDown',
+              side: 'right',
+              size: 10,
+            }}
+          >
             Language
           </Button>
-          <Button type="button" size="medium">
+          <Button
+            type="button"
+            title="sort"
+            aria-label="sort"
+            size="medium"
+            icon={{
+              name: 'sortDown',
+              side: 'right',
+              size: 10,
+            }}
+          >
             Sort
           </Button>
-          <Button type="button" size="medium">
+          <Button
+            type="button"
+            title="new"
+            aria-label="new"
+            size="medium"
+            variant="success"
+            icon={{
+              name: 'library',
+              side: 'left',
+            }}
+          >
             New
           </Button>
         </S.RepositorySearchButtonGroupDiv>
