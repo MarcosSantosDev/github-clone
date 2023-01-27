@@ -40,8 +40,5 @@ export const ProfileContentAside = styled.aside`
 `;
 
 export const GeneralContentDiv = styled.div`
-  ${({ theme }) => css`
-    grid-area: content;
-    background: ${theme.colors.background.normal[1]};
-  `}
+  grid-area: content;
 `;

@@ -4,7 +4,7 @@ import { blackTheme } from '@/styles/themes';
 
 import * as S from './Link.styles';
 
-type Size = 'small' | 'medium' | 'large';
+type Size = 'xxsmall' | 'medium' | 'large';
 
 type CustomProps = {
   size?: Size;
@@ -15,7 +15,7 @@ type CustomProps = {
 type LinkProps = LinkRRDProps & CustomProps;
 
 function getLinkCustomStyles({
-  size = 'small',
+  size = 'xxsmall',
   bold = false,
   disableUnderline = false,
 }: Pick<
@@ -37,7 +37,7 @@ function getLinkCustomStyles({
       };
     case 'medium':
       return {
-        fontSize: blackTheme.typograph.font.size.small,
+        fontSize: blackTheme.typograph.font.size.medium,
         ...staticStyles,
       };
     default:
