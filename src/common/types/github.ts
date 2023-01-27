@@ -21,10 +21,10 @@ export type User = {
   company: string;
   blog: string;
   location: string;
-  email: null;
-  hireable: null;
+  email: string | null;
+  hireable: string | null;
   bio: string;
-  twitter_username: null;
+  twitter_username: string | null;
   public_repos: number;
   public_gists: number;
   followers: number;
@@ -99,7 +99,7 @@ export type Repository = {
   has_pages: boolean;
   has_discussions: boolean;
   forks_count: number;
-  mirror_url: null;
+  mirror_url: string | null;
   archived: boolean;
   disabled: boolean;
   open_issues_count: number;
