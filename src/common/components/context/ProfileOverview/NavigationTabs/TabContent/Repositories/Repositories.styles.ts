@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ContainerDiv = styled.div`
   display: grid;
   grid-template-rows: 60px auto;
-  row-gap: 10px;
 
   width: 100%;
   min-height: 600px;
