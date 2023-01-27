@@ -32,7 +32,8 @@ function getButtonVariantCSS(variant: Variant) {
     border: 1px solid ${buttonStyles.borderColor};
 
     svg {
-      fill: ${buttonStyles.color};
+      color: ${buttonStyles.color} !important;
+      fill: ${buttonStyles.color} !important;
     }
   `;
 }
