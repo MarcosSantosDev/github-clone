@@ -1,3 +1,4 @@
+import { AiOutlineCaretDown } from 'react-icons/ai';
 import { FaRegStar } from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 import {
@@ -28,7 +29,8 @@ export type IconName =
   | 'link'
   | 'mail'
   | 'location'
-  | 'law';
+  | 'law'
+  | 'sortDown';
 
 export type Icon = {
   name: IconName;
@@ -42,13 +44,14 @@ export const icons: Icon[] = [
   { name: 'graph', Icon: VscGraph },
   { name: 'extensions', Icon: VscExtensions },
   { name: 'starfull', Icon: VscStarFull },
-  { name: 'regstar', Icon: FaRegStar },
   { name: 'organization', Icon: VscOrganization },
   { name: 'briefcase', Icon: VscBriefcase },
   { name: 'link', Icon: VscLink },
   { name: 'mail', Icon: VscMail },
   { name: 'location', Icon: VscLocation },
   { name: 'law', Icon: VscLaw },
+  { name: 'regstar', Icon: FaRegStar },
+  { name: 'sortDown', Icon: AiOutlineCaretDown },
 ];
 
 export const loader = (iconName: IconName, fontSize?: string | number) => {
