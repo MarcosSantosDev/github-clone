@@ -30,6 +30,11 @@ export const Default: StoryObj = {
       name: 'Label',
       defaultValue: 'I am a link',
     },
+    to: {
+      type: 'string',
+      name: 'Pathname',
+      defaultValue: '/',
+    },
     size: {
       type: 'string',
       name: 'Size',
