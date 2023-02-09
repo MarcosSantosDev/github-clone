@@ -4,11 +4,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
-import { Link } from './Link';
+import { LinkWrapper } from './LinkWrapper';
 
 export default {
-  title: 'Components/Structure/Link',
-  component: Link,
+  title: 'Components/Structure/LinkWrapper',
+  component: LinkWrapper,
   decorators: [
     Story => {
       return (
@@ -22,38 +22,23 @@ export default {
 
 export const Default: StoryObj = {
   args: {
-    size: 'small',
+    to: '/',
+    disableHoverUnderline: true,
   },
   argTypes: {
     children: {
-      type: 'string',
-      name: 'Label',
-      defaultValue: 'I am a link',
+      type: 'function',
+      name: 'Content(HTML)',
+      defaultValue: <span>Go to home</span>,
     },
     to: {
       type: 'string',
       name: 'Pathname',
       defaultValue: '/',
     },
-    size: {
-      type: 'string',
-      name: 'Size',
-      defaultValue: 'small',
-      description: 'Property to control font size of link',
-      control: 'inline-radio',
-      options: ['small', 'medium', 'large'],
-    },
-    bold: {
+    disableHoverUnderline: {
       type: 'boolean',
-      name: 'Is bold',
-      defaultValue: false,
-      description: 'Property to control font weight of link',
-      control: 'inline-radio',
-      options: [true, false],
-    },
-    disableUnderline: {
-      type: 'boolean',
-      name: 'Disable underline',
+      name: 'Disable hover underline',
       defaultValue: false,
       description: 'Property to control property text decoration',
       control: 'inline-radio',

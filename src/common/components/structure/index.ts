@@ -1,5 +1,6 @@
 export * from './Button/Button';
 export * from './Link/Link';
+export * from './LinkWrapper/LinkWrapper';
 export * from './GlobalGrid/GlobalGrid';
 export * from './Img/Img';
 export * from './Container/Container';
