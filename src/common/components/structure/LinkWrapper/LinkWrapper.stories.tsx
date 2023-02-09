@@ -29,7 +29,7 @@ export const Default: StoryObj = {
     children: {
       type: 'function',
       name: 'Content(HTML)',
-      defaultValue: <span>bold link</span>,
+      defaultValue: <span>Go to home</span>,
     },
     to: {
       type: 'string',
