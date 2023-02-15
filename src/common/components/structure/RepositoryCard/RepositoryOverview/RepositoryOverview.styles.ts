@@ -14,24 +14,28 @@ export const ColoredCircleDiv = styled.div<ColoredCircleStyledProps>`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 12px;
-  color: #8b949e;
-  margin: 0;
+  ${({ theme }) => css`
+    font-size: 12px;
+    color: ${theme.colors.text.normal[8]};
+    margin: 0;
+  `}
 `;
 
 export const RepositoryContainerDiv = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: repeat(3, auto);
-  grid-template-areas:
-    '. projectActions'
-    '. projectActions'
-    '. projectActions';
-  row-gap: 12px;
-  padding: 24px 0;
-  height: min-content;
-  box-sizing: border-box;
-  border-top: 1px solid #373e47;
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      '. projectActions'
+      '. projectActions'
+      '. projectActions';
+    row-gap: 12px;
+    padding: 24px 0;
+    height: min-content;
+    box-sizing: border-box;
+    border-top: 1px solid ${theme.colors.border.normal[6]};
+  `}
 `;
 
 export const RepositoryCoreInfoWrapperDiv = styled.div``;

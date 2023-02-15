@@ -22,6 +22,7 @@ const ProfileOverview = () => (
             bio: user.bio,
           }}
           details={{
+            login: user.login,
             blog: user.blog,
             company: user.company,
             email: user.email,
