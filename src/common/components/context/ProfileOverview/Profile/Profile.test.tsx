@@ -1,5 +1,7 @@
 import { render, screen, RenderOptions } from '@testing-library/react';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { user } from '@/common/components/context/ProfileOverview/mock';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
@@ -9,7 +11,12 @@ const renderWithTheme = (
   ui: React.ReactNode,
   options?: Omit<RenderOptions, 'queries'>,
 ) => {
-  return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
+  return render(
+    <AppThemeProvider>
+      <Router>{ui}</Router>
+    </AppThemeProvider>,
+    options,
+  );
 };
 
 describe('<Profile />', () => {
@@ -23,6 +30,7 @@ describe('<Profile />', () => {
           bio: 'Test',
         }}
         details={{
+          login: 'MarcosSantosDev',
           blog: 'Test',
           company: 'Test',
           email: 'test@test.com',

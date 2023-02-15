@@ -23,7 +23,6 @@ export default {
 export const Default: StoryObj = {
   args: {
     to: '/',
-    disableHoverUnderline: true,
   },
   argTypes: {
     children: {
@@ -35,14 +34,6 @@ export const Default: StoryObj = {
       type: 'string',
       name: 'Pathname',
       defaultValue: '/',
-    },
-    disableHoverUnderline: {
-      type: 'boolean',
-      name: 'Disable hover underline',
-      defaultValue: false,
-      description: 'Property to control property text decoration',
-      control: 'inline-radio',
-      options: [true, false],
     },
   },
 };

@@ -1,5 +1,7 @@
 import { render, screen, RenderOptions } from '@testing-library/react';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
 import Details from './Details';
@@ -8,10 +10,16 @@ const renderWithTheme = (
   ui: React.ReactNode,
   options?: Omit<RenderOptions, 'queries'>,
 ) => {
-  return render(<AppThemeProvider>{ui}</AppThemeProvider>, options);
+  return render(
+    <AppThemeProvider>
+      <Router>{ui}</Router>
+    </AppThemeProvider>,
+    options,
+  );
 };
 
 const user = {
+  login: 'MarcosSantosDev',
   company: 'ioasys',
   blog: 'https://www.linkedin.com/in/marcossantosdev',
   location: 'Belo Horizonte - MG',
@@ -24,6 +32,7 @@ describe('<Details />', () => {
   it('should render in the document', () => {
     renderWithTheme(
       <Details
+        login={user.login}
         company={user.company}
         blog={user.blog}
         location={user.location}

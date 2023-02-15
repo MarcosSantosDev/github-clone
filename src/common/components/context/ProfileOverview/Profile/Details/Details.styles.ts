@@ -33,3 +33,8 @@ export const Li = styled.li`
     }
   `}
 `;
+
+export const ContainerFlexDiv = styled.div`
+  display: flex;
+  gap: 4px;
+`;

@@ -3,15 +3,16 @@ import styled, { css } from 'styled-components';
 
 export const LinkWrapper = styled(LinkReactRouterDom)`
   ${({ theme }) => css`
+    display: contents;
     text-decoration: none;
     color: inherit;
 
     :hover {
-      text-decoration: underline;
-      color: ${theme.colors.text.normal[7]};
+      * {
+        color: ${theme.colors.text.normal[7]};
+      }
 
       svg {
-        color: ${theme.colors.text.normal[7]};
         fill: ${theme.colors.text.normal[7]};
       }
     }

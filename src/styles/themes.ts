@@ -96,6 +96,7 @@ export const blackTheme: AppThemeProps = {
         [3]: '#cdd9e51a',
         [4]: '#347d39',
         [5]: '#fd8c73',
+        [6]: '#373e47',
       },
       hover: {},
     },

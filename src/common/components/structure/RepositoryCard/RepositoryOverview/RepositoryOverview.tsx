@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { formatDistanceStrict } from 'date-fns';
 
-import { Link, RoundText } from '@/common/components/structure';
+import { Link, LinkWrapper, RoundText } from '@/common/components/structure';
+import { github } from '@/common/constants';
 import { loader } from '@/common/icons';
 import { Repository } from '@/common/types';
 import { languages_colors } from '@/static/colors.json';
@@ -49,7 +50,7 @@ const RepositoryOverview = ({
     <S.RepositoryContainerDiv {...restProps}>
       <S.RepositoryCoreInfoWrapperDiv>
         <S.RepositoryNameContentDiv>
-          <Link to="/" size="medium" bold>
+          <Link to={repository.html_url} size="medium" bold>
             {repository.name}
           </Link>
           <RoundText
@@ -69,7 +70,7 @@ const RepositoryOverview = ({
             content={topic}
             variant="secondary"
             type="link"
-            linkURL="/"
+            linkURL={`${github.GITHUB_URL}/topics/${topic}`}
           />
         ))}
       </S.RepositoryTopicWrapperDiv>
@@ -82,8 +83,10 @@ const RepositoryOverview = ({
         ) : null}
         {repository.stargazers_count > 0 ? (
           <S.SummaryContainerDiv>
-            {loader('regstar', 15)}
-            <S.Paragraph>{repository.stargazers_count}</S.Paragraph>
+            <LinkWrapper to={`${repository.html_url}/stargazers`}>
+              {loader('regstar', 15)}
+              <S.Paragraph>{repository.stargazers_count}</S.Paragraph>
+            </LinkWrapper>
           </S.SummaryContainerDiv>
         ) : null}
         {repository.license ? (
