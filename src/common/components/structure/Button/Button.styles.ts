@@ -16,6 +16,11 @@ const buttonVariantColor: ButtonVariant = {
     backgroundColor: theme.colors.background.normal[2],
     borderColor: theme.colors.border.normal[3],
   },
+  secondary: {
+    color: theme.colors.text.normal[1],
+    backgroundColor: theme.colors.background.normal[6],
+    borderColor: theme.colors.border.normal[4],
+  },
   success: {
     color: theme.colors.text.normal[1],
     backgroundColor: theme.colors.background.normal[5],
@@ -23,7 +28,7 @@ const buttonVariantColor: ButtonVariant = {
   },
 };
 
-function getButtonVariantCSS(variant: Variant) {
+function getButtonVariantCSS(variant: Variant = 'primary') {
   const buttonStyles = buttonVariantColor[variant];
 
   return css`
@@ -39,7 +44,7 @@ function getButtonVariantCSS(variant: Variant) {
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, fullWidth, size = 'small', variant = 'primary' }) => css`
+  ${({ theme, fullWidth, variant, size = 'small' }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
