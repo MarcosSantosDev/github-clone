@@ -2,7 +2,7 @@ import { IconName } from '@/common/icons/loader';
 
 export type Sizes = 'small' | 'medium' | 'large';
 
-export type Variant = 'primary' | 'success';
+export type Variant = 'primary' | 'secondary' | 'success';
 
 type VariantCustomColor = {
   color: string;

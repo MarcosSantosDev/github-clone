@@ -48,7 +48,7 @@ export default {
       defaultValue: 'primary',
       description: 'Property to control size button',
       control: 'inline-radio',
-      options: ['primary', 'success'],
+      options: ['primary', 'secondary', 'success'],
     },
   },
 } as Meta<ButtonProps>;

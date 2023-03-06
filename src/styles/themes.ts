@@ -82,6 +82,7 @@ export const blackTheme: AppThemeProps = {
         [3]: '#2d333b',
         [4]: '#22272e',
         [5]: '#347d39',
+        [6]: '#539bf5',
       },
       hover: {
         [1]: '#444c56',
