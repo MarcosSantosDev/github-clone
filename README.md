@@ -3,6 +3,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-orange.svg)](https://github.com/prettier/prettier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+![ts-github-doc](https://user-images.githubusercontent.com/26147340/226112001-40713ee2-e8c6-4e06-bb24-958c468dfef2.png)
+
 ## :books: Technologies used
 
 The main technologies used to develop the project were:
