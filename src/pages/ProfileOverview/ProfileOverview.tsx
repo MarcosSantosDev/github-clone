@@ -1,10 +1,6 @@
-import {
-  TabNavigation,
-  Profile,
-  TabContent,
-} from '@/common/components/context/ProfileOverview';
-import { user } from '@/common/components/context/ProfileOverview/mock';
-
+import { user } from './mock';
+import { TabNavigation, TabContent } from './NavigationTabs';
+import Profile from './Profile/Profile';
 import * as S from './ProfileOverview.styles';
 
 const ProfileOverview = () => (

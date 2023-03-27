@@ -2,9 +2,9 @@ import { render, screen, RenderOptions } from '@testing-library/react';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { user } from '@/common/components/context/ProfileOverview/mock';
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
+import { user } from '../mock';
 import Profile from './Profile';
 
 const renderWithTheme = (
