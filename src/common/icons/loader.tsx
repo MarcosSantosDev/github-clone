@@ -59,7 +59,11 @@ export const loader = (iconName: IconName, fontSize?: string | number) => {
 
   if (IconElement) {
     return (
-      <IconElement.Icon className="global-icon-color" fontSize={fontSize} />
+      <IconElement.Icon
+        className="global-icon-color"
+        fontSize={fontSize}
+        aria-hidden="true"
+      />
     );
   }
 };
