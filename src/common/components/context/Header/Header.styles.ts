@@ -10,9 +10,9 @@ export const Header = styled.header`
     flex-shrink: 1;
     background: ${theme.colors.background.normal[3]};
     color: ${theme.colors.text.normal[2]};
-    padding: 16px 32px;
+    padding: 0px 32px;
     max-width: 100%;
-    max-height: 60px;
+    max-height: 100%;
   `}
 `;
 
