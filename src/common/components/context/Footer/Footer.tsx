@@ -1,14 +1,15 @@
 import { Link } from '@/common/components/structure';
 import { loader } from '@/common/icons/loader';
 
-import * as S from './GlobalFooter.styles';
+import * as S from './Footer.styles';
 
-const GlobalFooter = () => (
-  <S.ContainerDiv>
-    <S.ContainerIncDiv>
+const Footer = () => (
+  <S.Footer>
+    <S.CopyrightContainerDiv>
       <div>{loader('githubinverted', 24)}</div>
       <span>© 2022 GitHub, Inc.</span>
-    </S.ContainerIncDiv>
+    </S.CopyrightContainerDiv>
+
     <S.Nav>
       <S.Ul>
         <S.Li>
@@ -46,7 +47,7 @@ const GlobalFooter = () => (
         </S.Li>
       </S.Ul>
     </S.Nav>
-  </S.ContainerDiv>
+  </S.Footer>
 );
 
-export default GlobalFooter;
+export default Footer;

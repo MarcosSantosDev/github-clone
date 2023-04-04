@@ -1,19 +1,18 @@
 import styled, { css } from 'styled-components';
 
-export const ContainerDiv = styled.footer`
+export const Footer = styled.footer`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 115px;
     align-items: center;
     column-gap: 40px;
-
     margin: 0px 16px;
     border-top: 1px solid ${theme.colors.border.normal[3]};
   `}
 `;
 
-export const ContainerIncDiv = styled.div`
+export const CopyrightContainerDiv = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: auto 1fr;
@@ -30,7 +29,7 @@ export const ContainerIncDiv = styled.div`
 export const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  width: 80%;
+  max-width: 80%;
 `;
 
 export const Ul = styled.ul`

@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
-import GlobalFooter from './GlobalFooter';
+import Footer from './Footer';
 
 const links = [
   'Terms',
@@ -32,9 +32,9 @@ const renderWithTheme = (
   );
 };
 
-describe('<GlobalFooter />', () => {
+describe('<Footer />', () => {
   it('should be in the document', () => {
-    renderWithTheme(<GlobalFooter />);
+    renderWithTheme(<Footer />);
 
     const copyright = screen.getByText('© 2022 GitHub, Inc.');
     expect(copyright).toBeInTheDocument();

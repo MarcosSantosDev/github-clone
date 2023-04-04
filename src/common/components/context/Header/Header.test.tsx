@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { AppThemeProvider } from '@/styles/AppThemeProvider';
 
-import GlobalNavbar from './GlobalNavbar';
+import Header from './Header';
 
 const renderWithTheme = (
   ui: React.ReactNode,
@@ -20,9 +20,9 @@ const renderWithTheme = (
 
 const links = ['Pull requests', 'Issues', 'Marketplace', 'Explore'];
 
-describe('<GlobalNavbar />', () => {
-  it('should be in the document', () => {
-    renderWithTheme(<GlobalNavbar />);
+describe('<Header />', () => {
+  it('should be all anchor links in the document', () => {
+    renderWithTheme(<Header />);
 
     links.forEach(link => {
       const elementLink = screen.getByText(link);

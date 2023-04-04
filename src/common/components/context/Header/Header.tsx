@@ -2,18 +2,26 @@ import { Link } from 'react-router-dom';
 
 import { loader } from '@/common/icons';
 
-import * as S from './GlobalNavbar.styles';
+import * as S from './Header.styles';
 
-const GlobalNavbar = () => (
+const Header = () => (
   <S.Header>
+    <S.IconContainerDiv>{loader('githubinverted', 32)}</S.IconContainerDiv>
+
+    <S.Label htmlFor="general-search">
+      <S.InputSearch
+        type="text"
+        id="general-search"
+        name="general-search"
+        placeholder="Search or jump to…"
+        aria-label="general-search"
+        aria-placeholder="Search or jump to…"
+        role="combobox"
+        autoComplete="off"
+      />
+    </S.Label>
+
     <S.Nav>
-      <S.IconContainerDiv>{loader('githubinverted', 32)}</S.IconContainerDiv>
-
-      <S.InputWrapper>
-        <S.InputSearch type="text" placeholder="Search or jump to…" />
-        <div className="input-hack">/</div>
-      </S.InputWrapper>
-
       <S.Ul>
         <S.Li>
           <Link to={window.location.pathname}>Pull requests</Link>
@@ -35,4 +43,4 @@ const GlobalNavbar = () => (
   </S.Header>
 );
 
-export default GlobalNavbar;
+export default Header;
