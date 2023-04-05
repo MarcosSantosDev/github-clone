@@ -1,3 +1,2 @@
-export { default as NoMatch } from './Home/Home';
-export { default as NotFoundPeople } from './NotFoundPeople/NotFoundPeople';
+export { default as Home } from './Home/Home';
 export { default as ProfileOverview } from './ProfileOverview/ProfileOverview';
