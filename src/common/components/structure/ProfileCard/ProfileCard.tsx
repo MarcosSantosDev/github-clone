@@ -30,7 +30,7 @@ const ProfileCard = ({ profile, isLoading }: ProfileCardProps) => {
         src={profile.photoUrl}
         onError={({ currentTarget }) => {
           currentTarget.onerror = null;
-          currentTarget.src = './images/github.png';
+          currentTarget.src = '/images/github-spinner.svg';
         }}
         loading="lazy"
         alt="Person profile"
