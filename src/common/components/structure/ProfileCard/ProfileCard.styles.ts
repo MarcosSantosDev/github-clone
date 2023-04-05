@@ -19,9 +19,8 @@ export const ContainerDiv = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  max-height: 80px;
-  max-width: 80px;
-  height: 100%;
+  height: 80px;
+  width: 80px;
   border-radius: 100%;
   border: 2px solid #adbac7;
 `;

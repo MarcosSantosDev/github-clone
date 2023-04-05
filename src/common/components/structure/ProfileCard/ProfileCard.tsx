@@ -1,4 +1,4 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '../Button/Button';
 import CardFeedback from './CardFeedback/CardFeedback';
@@ -14,13 +14,27 @@ type ProfileCardProps = {
 };
 
 const ProfileCard = ({ profile, isLoading }: ProfileCardProps) => {
+  const navigate = useNavigate();
+
   if (!profile || isLoading) {
     return <CardFeedback isLoading={isLoading} isEmpty={!profile} />;
   }
 
+  const goToUserProfile = () => {
+    navigate(`/github/${profile.username}`);
+  };
+
   return (
     <S.ContainerDiv role="contentinfo">
-      <S.ProfileImg src={profile.photoUrl} alt="profile" />
+      <S.ProfileImg
+        src={profile.photoUrl}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null;
+          currentTarget.src = './images/github.png';
+        }}
+        loading="lazy"
+        alt="Person profile"
+      />
 
       <S.ProfileInformationDiv>
         <h4>{profile.name}</h4>
@@ -36,6 +50,7 @@ const ProfileCard = ({ profile, isLoading }: ProfileCardProps) => {
           side: 'left',
         }}
         fullWidth
+        onClick={goToUserProfile}
       >
         View profile
       </Button>

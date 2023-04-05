@@ -5,12 +5,12 @@ import Information from './Information/Information';
 import * as S from './Profile.styles';
 
 type ProfileProps = {
-  profile: string;
+  username: string;
 };
 
-const Profile = ({ profile }: ProfileProps) => {
+const Profile = ({ username }: ProfileProps) => {
   const { data: user } = useQueryFetchGithubUser({
-    user: profile,
+    username,
   });
 
   const handleEditProfile = () => {

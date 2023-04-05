@@ -1,30 +1,8 @@
-// import { Link } from 'react-router-dom';
-
-import { Input } from '@/common/components/form';
-import { Button, ProfileCard } from '@/common/components/structure';
+import { SearchGithubUser } from '@/common/components/context';
 
 import * as S from './Home.styles';
 
 const Home = () => {
-  const fetched = !false;
-  const isLoading = !false;
-
-  const profile = {
-    photoUrl: 'https://avatars.githubusercontent.com/u/26147340?v=4',
-    name: 'Marcos Adriano Ferreira Dos Santos',
-    username: 'MarcosSantosDev',
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const username = data.get('username') as string | null;
-
-    if (username) {
-      //
-    }
-  };
-
   return (
     <S.ContainerDiv>
       <S.MainContentDiv>
@@ -39,33 +17,7 @@ const Home = () => {
           </S.PresentationDescriptionP>
         </S.PresentationSection>
 
-        <S.SearchUserContainerSection>
-          <form onSubmit={handleSubmit}>
-            <Input
-              type="text"
-              name="username"
-              placeholder="Search a user profile"
-            />
-            <Button
-              type="button"
-              variant="success"
-              size="medium"
-              icon={{
-                name: 'organization',
-                side: 'left',
-              }}
-              fullWidth
-            >
-              Search
-            </Button>
-          </form>
-
-          <S.SearchUserResultContainerDiv>
-            {fetched ? (
-              <ProfileCard isLoading={isLoading} profile={profile} />
-            ) : null}
-          </S.SearchUserResultContainerDiv>
-        </S.SearchUserContainerSection>
+        <SearchGithubUser />
       </S.MainContentDiv>
       <S.GithubImageDiv />
     </S.ContainerDiv>

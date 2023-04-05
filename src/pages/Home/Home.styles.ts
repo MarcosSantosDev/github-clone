@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const ContainerDiv = styled.div`
   display: grid;
@@ -6,7 +6,7 @@ export const ContainerDiv = styled.div`
 `;
 
 export const GithubImageDiv = styled.div`
-  background: url(./images/bg_home_github.webp);
+  background-image: url(./images/bg_home_github.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
