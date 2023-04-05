@@ -5,9 +5,9 @@ import Profile from './Profile/Profile';
 import * as S from './ProfileOverview.styles';
 
 const ProfileOverview = () => {
-  const params = useParams<{ profile: string }>();
+  const params = useParams<{ username: string }>();
 
-  if (!params.profile) {
+  if (!params.username) {
     return <h2>Invalid params!</h2>;
   }
 
@@ -18,7 +18,7 @@ const ProfileOverview = () => {
       </S.Nav>
       <S.Main>
         <S.ProfileContentAside>
-          <Profile profile={params.profile} />
+          <Profile username={params.username} />
         </S.ProfileContentAside>
         <S.GeneralContentDiv>
           <TabContent />

@@ -1,5 +1,5 @@
 export type FetchGithubUserArguments = {
-  user: string;
+  username: string;
 };
 
 export type GithubUser = {

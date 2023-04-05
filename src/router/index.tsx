@@ -9,7 +9,7 @@ const Router = () => (
       <Routes>
         <Route path="/" element={<NoMatch />} />
         <Route path="/github" element={<NotFoundPeople />} />
-        <Route path="/github/:profile" element={<ProfileOverview />} />
+        <Route path="/github/:username" element={<ProfileOverview />} />
         <Route path="/not-found" element={<NotFoundPeople />} />
         <Route path="*" element={<NotFoundPeople />} />
       </Routes>

@@ -7,3 +7,4 @@ export * from './Container/Container';
 export * from './RoundText/RoundText';
 
 export { default as RepositoryOverview } from './RepositoryCard/RepositoryOverview/RepositoryOverview';
+export { default as ProfileCard } from './ProfileCard/ProfileCard';
