@@ -1,9 +1,11 @@
 import * as React from 'react';
 
+import { useParams } from 'react-router-dom';
+
 import Tab from '@/common/components/structure/Tab/Tab';
 import { useTab } from '@/common/hooks';
+import { useQueryFetchGithubUser } from '@/common/hooks/reactQuery';
 
-import { user } from '../../mock';
 import { tabOptions, getTabActive } from '../../shared/navigationTabs';
 import type { TabIdentifier } from '../../shared/navigationTabs';
 import * as S from './TabNavigation.styles';
@@ -33,15 +35,25 @@ function controlClassesByScroll() {
 }
 
 const TabNavigation = () => {
-  const { avatar_url, login, public_repos } = user;
   const { setTab, tab } = useTab();
-
   const currentTabIdentifier = getTabActive(tab);
+
+  const navigationParams = useParams<{ username?: string }>();
+
+  const { data: githubUser } = useQueryFetchGithubUser({
+    username: navigationParams?.username ?? '',
+  });
+
+  const profile = {
+    avatarUrl: githubUser?.avatar_url ?? '',
+    login: githubUser?.login ?? '',
+    publicRepos: githubUser?.public_repos ?? 0,
+  };
 
   function getCounterByTabIdentifier(tabIdentifier: TabIdentifier) {
     switch (tabIdentifier) {
       case 'repositories':
-        return public_repos;
+        return profile.publicRepos;
       case 'stars':
         return 0;
       default:
@@ -54,10 +66,10 @@ const TabNavigation = () => {
   }, []);
 
   return (
-    <S.ContainerDiv data-testid="tab-navigation">
+    <S.ContainerDiv>
       <S.ProfileNavigationDiv id="profile-navigation">
-        <S.ProfileImg src={avatar_url} alt="small profile" />
-        <S.ProfileNameSpan>{login}</S.ProfileNameSpan>
+        <S.ProfileImg src={profile.avatarUrl} alt="Profile" />
+        <S.ProfileNameSpan>{profile.login}</S.ProfileNameSpan>
       </S.ProfileNavigationDiv>
       <S.TabOptionsDiv>
         {tabOptions.map(tabOption => (

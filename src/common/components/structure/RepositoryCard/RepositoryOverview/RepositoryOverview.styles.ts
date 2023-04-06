@@ -67,5 +67,5 @@ export const SummaryContainerDiv = styled.div`
 export const ActionWrapperInRepositoryDiv = styled.div`
   grid-area: projectActions;
 
-  width: 400px;
+  width: 200px;
 `;
