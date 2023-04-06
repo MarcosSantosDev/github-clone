@@ -1,10 +1,60 @@
+import * as React from 'react';
+
+import { useParams } from 'react-router-dom';
+
+import { Pagination } from '@/common/components/context';
 import { Input } from '@/common/components/form';
 import { Button, RepositoryOverview } from '@/common/components/structure';
+import {
+  useQueryFetchGithubRepositoriesByUser,
+  useQueryFetchGithubUser,
+} from '@/common/hooks/reactQuery';
 
-import { repositoriesMocked } from './mock';
 import * as S from './Repositories.styles';
 
 const Repositories = () => {
+  const [pagination, setPagination] = React.useState({
+    page: 1,
+    perPage: 5,
+  });
+  const params = useParams<{ username: string }>();
+
+  if (!params.username) {
+    return <h2>Invalid params!</h2>;
+  }
+
+  const { data: user } = useQueryFetchGithubUser({
+    username: params.username || '',
+  });
+  const { data: repositories = [], refetch: fetchGithubRepositoriesByUser } =
+    useQueryFetchGithubRepositoriesByUser(
+      {
+        username: params.username || '',
+        pagination,
+      },
+      {
+        enabled: false,
+      },
+    );
+
+  const handleChangePage = (page: number) => {
+    setPagination(currentPagination => ({ ...currentPagination, page }));
+  };
+
+  const lastPage = React.useMemo(() => {
+    if (user) {
+      const amountOfRepositories = user.public_repos;
+      const lastPage = Math.ceil(amountOfRepositories / pagination.perPage);
+      return lastPage;
+    }
+
+    return 0;
+  }, [user, pagination.perPage]);
+
+  React.useEffect(() => {
+    fetchGithubRepositoriesByUser();
+  }, [pagination]);
+
   return (
     <S.ContainerDiv>
       <S.RepositorySearchWrapperDiv>
@@ -65,10 +115,21 @@ const Repositories = () => {
         </S.RepositorySearchButtonGroupDiv>
       </S.RepositorySearchWrapperDiv>
       <S.RepositoryListWrapperDiv>
-        {repositoriesMocked.map(repository => (
-          <RepositoryOverview key={repository.id} repository={repository} />
+        {repositories.map(repository => (
+          <RepositoryOverview
+            key={repository.node_id}
+            repository={repository}
+          />
         ))}
       </S.RepositoryListWrapperDiv>
+
+      <Pagination
+        changePage={handleChangePage}
+        pagination={{
+          page: pagination.page,
+          lastPage: lastPage,
+        }}
+      />
     </S.ContainerDiv>
   );
 };

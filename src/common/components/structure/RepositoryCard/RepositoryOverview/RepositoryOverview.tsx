@@ -5,13 +5,13 @@ import { formatDistanceStrict } from 'date-fns';
 import { Link, LinkWrapper, RoundText } from '@/common/components/structure';
 import { github } from '@/common/constants';
 import { loader } from '@/common/icons';
-import { Repository } from '@/common/types';
+import { GithubRepository } from '@/services/requests/github.types';
 import { languages_colors } from '@/static/colors.json';
 
 import * as S from './RepositoryOverview.styles';
 
 export type RepositoryOverviewProps = React.HTMLAttributes<HTMLDivElement> & {
-  repository: Repository;
+  repository: GithubRepository;
 };
 
 export type LanguageColors = {
