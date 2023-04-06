@@ -14,6 +14,8 @@ import {
   VscMail,
   VscLocation,
   VscLaw,
+  VscChevronLeft,
+  VscChevronRight,
 } from 'react-icons/vsc';
 
 export type IconName =
@@ -30,7 +32,9 @@ export type IconName =
   | 'mail'
   | 'location'
   | 'law'
-  | 'sortDown';
+  | 'sortDown'
+  | 'chevronLeft'
+  | 'chevronRight';
 
 export type Icon = {
   name: IconName;
@@ -52,6 +56,8 @@ export const icons: Icon[] = [
   { name: 'law', Icon: VscLaw },
   { name: 'regstar', Icon: FaRegStar },
   { name: 'sortDown', Icon: AiOutlineCaretDown },
+  { name: 'chevronLeft', Icon: VscChevronLeft },
+  { name: 'chevronRight', Icon: VscChevronRight },
 ];
 
 export const loader = (iconName: IconName, fontSize?: string | number) => {
